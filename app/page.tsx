@@ -128,8 +128,8 @@ export default function HomePage() {
           {/* JR's story */}
           <div style={{ maxWidth: 960, margin: '0 auto 80px' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center' }}>
-              <div style={{ position: 'relative', aspectRatio: '9/16', background: '#000', border: '1px solid rgba(201,168,76,0.2)', overflow: 'hidden' }}>
-                <iframe src="https://streamable.com/e/z3w7cj?autoplay=1&loop=1&nocontrols=1" allow="autoplay; fullscreen" allowFullScreen style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }} />
+              <div style={{ position: 'relative', aspectRatio: '16/9', boxShadow: '0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(201,168,76,0.15)', overflow: 'hidden', borderRadius: 4 }}>
+                <Image src="/images/jr-commander.jpg" alt="JR — Commander, Dolce Vida" fill style={{ objectFit: 'cover' }} />
               </div>
               <div>
                 <div style={{ marginBottom: 28, display: 'flex', alignItems: 'center', gap: 12 }}>
