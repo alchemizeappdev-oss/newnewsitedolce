@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 const TESTIMONIALS = [
   { quote: "Star knew things no one could possibly know. She described my late mother's jewelry, her voice, the exact phrase she always used. I left that session changed in a way I still can't explain.", author: 'Maria T.', location: 'Reno, NV' },
-  { quote: "After the fire cleanse, the weight I'd been carrying for three years just -- lifted. My house feels lighter. I feel lighter. I don't have any other way to describe it except it worked.", author: 'Denise R.', location: 'Sparks, NV' },
+  { quote: "After the fire cleanse, the weight I'd been carrying for three years just — lifted. My house feels lighter. I feel lighter. I don't have any other way to describe it except it worked.", author: 'Denise R.', location: 'Sparks, NV' },
   { quote: "The hypnosis sessions helped me quit smoking after 20 years. Three sessions. I haven't touched a cigarette since and I genuinely don't want one. Star is the real thing.", author: 'James O.', location: 'Carson City, NV' },
   { quote: "My past life regression session answered questions I've had my whole life about why I'm drawn to certain places and people. Profound, beautiful, and completely validating.", author: 'Alicia M.', location: 'San Francisco, CA' },
   { quote: "I booked a 30-minute reading as a skeptic. I left as a believer. The accuracy was undeniable. Star has an extraordinary gift and the grace to use it with care and love.", author: 'Kevin L.', location: 'Las Vegas, NV' },
@@ -19,7 +19,7 @@ const FAQS = [
   { q: 'What is your cancellation and refund policy?', a: 'Cancellations made 48+ hours before your scheduled session receive a full refund or credit toward rebooking. Cancellations within 48 hours are non-refundable but may be rescheduled once at no additional charge. No-shows are non-refundable.' },
   { q: 'How should I prepare for my session?', a: 'Come with an open heart and, ideally, a quiet mind. If you have specific questions or intentions, write them down beforehand. Avoid alcohol or heavy substances for 24 hours before a session. Arrival 10 minutes early is recommended for in-person visits.' },
   { q: 'What exactly happens during a hex removal?', a: "Star will first identify the nature and source of the energetic interference through intuitive assessment and spiritual tools. The removal involves a three-hour ceremonial process using sacred prayer, specific ritual materials, and Star's direct spiritual intervention. A protective sealing is completed at the end." },
-  { q: 'How is hypnosis different from a reading?', a: 'Readings are intuitive -- Star receives information from the spiritual realm to guide and inform you. Hypnosis is clinical and directive -- it works directly on your subconscious mind to reprogram patterns, release trauma, and install new beliefs. Both are powerful but serve different needs.' },
+  { q: 'How is hypnosis different from a reading?', a: 'Readings are intuitive — Star receives information from the spiritual realm to guide and inform you. Hypnosis is clinical and directive — it works directly on your subconscious mind to reprogram patterns, release trauma, and install new beliefs. Both are powerful but serve different needs.' },
   { q: "Where can I get Star's book?", a: 'Life After Death is available on Amazon. You can also purchase a personally signed copy directly through this website. Signed copies include a handwritten note from Star and ship within 5–7 business days.' },
 ]
 
@@ -73,7 +73,7 @@ export default function HomePage() {
 
   return (
     <>
-      {/* -- PWA INSTALL BANNER -- */}
+      {/* ── PWA INSTALL BANNER ── */}
       {showInstall && (
         <div style={{
           position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 300,
@@ -101,7 +101,7 @@ export default function HomePage() {
         </div>
       )}
 
-      {/* -- MOBILE MENU OVERLAY -- */}
+      {/* ── MOBILE MENU OVERLAY ── */}
       {mobileOpen && (
         <div style={{
           position: 'fixed', inset: 0,
@@ -153,7 +153,7 @@ export default function HomePage() {
         </div>
       )}
 
-      {/* -- NAVBAR -- */}
+      {/* ── NAVBAR ── */}
       <nav style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
@@ -187,7 +187,7 @@ export default function HomePage() {
         </button>
       </nav>
 
-      {/* -- HERO -- */}
+      {/* ── HERO ── */}
       <section id="hero" style={{ position: 'relative', minHeight: '100svh', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', overflow: 'hidden' }}>
         <video
           autoPlay loop muted playsInline
@@ -249,14 +249,14 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Scroll indicator -- centered, no absolute drift off screen */}
+        {/* Scroll indicator — centered, no absolute drift off screen */}
         <div style={{ position: 'absolute', bottom: 'max(20px, env(safe-area-inset-bottom, 20px))', left: 0, right: 0, zIndex: 2, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, pointerEvents: 'none' }}>
           <div style={{ width: 1, height: 32, background: 'linear-gradient(to bottom,rgba(201,168,76,0.6),transparent)' }} />
           <span style={{ fontFamily: HEAD_FONT, fontSize: '0.5rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: GOLD, opacity: 0.6 }}>Scroll</span>
         </div>
       </section>
 
-      {/* -- ABOUT -- */}
+      {/* ── ABOUT ── */}
       <section
         id="about"
         style={{
@@ -275,7 +275,7 @@ export default function HomePage() {
               <em style={{ fontFamily: BODY_FONT, fontWeight: 300, fontStyle: 'italic' }}>And that is when everything began.</em>
             </h2>
             <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3.5vw,1.2rem)', lineHeight: 1.85, color: CREAM_MUTED }}>
-              There was a moment -- a split second that should have been the end -- when Star Monreal left this world. No warning. No goodbye. Just silence, then light, then something no human language was built to describe.
+              There was a moment — a split second that should have been the end — when Star Monreal left this world. No warning. No goodbye. Just silence, then light, then something no human language was built to describe.
             </p>
           </div>
 
@@ -284,7 +284,7 @@ export default function HomePage() {
             <div>
               <p className="section-label" style={{ textAlign: 'left' }}>Star Monreal</p>
               <h3 style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(1.3rem,5vw,2rem)', letterSpacing: '0.06em', marginBottom: 16, color: CREAM, lineHeight: 1.3 }}>She came back<br />with a transmission.</h3>
-              <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 14 }}>She stood beyond the veil -- not in darkness, not in fear -- in a peace so complete it erased every question she had ever carried. In a love so vast it made every wound, every heartbreak, every year of feeling lost suddenly make sense.</p>
+              <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 14 }}>She stood beyond the veil — not in darkness, not in fear — in a peace so complete it erased every question she had ever carried. In a love so vast it made every wound, every heartbreak, every year of feeling lost suddenly make sense.</p>
               <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 14 }}>In the presence of the Creator and <strong style={{ color: CREAM }}>Archangel Michael</strong>, she was shown what most people spend their entire lives searching for: truth, purpose, and the real reason the soul chooses to come here. And then she came back.</p>
               <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED }}>Waking up was not a relief. It was a reckoning. She returned knowing that people are living far beneath their power. That spirits are exhausted, energy is blocked, and people have forgotten who they really are. <strong style={{ color: CREAM }}>That is why Dolce Vida was born.</strong></p>
             </div>
@@ -298,7 +298,7 @@ export default function HomePage() {
           <div style={{ maxWidth: 960, margin: '0 auto 48px' }}>
             <div className="two-col-grid">
               <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', boxShadow: '0 20px 60px rgba(0,0,0,0.6)', borderRadius: 4, overflow: 'hidden' }}>
-                <Image src="/images/jr-commander.jpg" alt="JR -- Commander, Dolce Vida" fill style={{ objectFit: 'cover' }} />
+                <Image src="/images/jr-commander.jpg" alt="JR — Commander, Dolce Vida" fill style={{ objectFit: 'cover' }} />
               </div>
               <div>
                 <div style={{ marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -307,7 +307,7 @@ export default function HomePage() {
                   <div style={{ width: 32, height: 1, background: `linear-gradient(to left,transparent,${GOLD})` }} />
                 </div>
                 <h3 style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(1.3rem,5vw,2rem)', letterSpacing: '0.06em', color: CREAM, marginBottom: 16, lineHeight: 1.3 }}>He was born<br />to protect it.</h3>
-                <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 14 }}>JR comes from a small town, but his story was never meant to stay small. Through his mother&apos;s bloodline, he carries the gifts of his grandfather -- a medicine man, a shaman, a healer. The same energy lives in him.</p>
+                <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 14 }}>JR comes from a small town, but his story was never meant to stay small. Through his mother&apos;s bloodline, he carries the gifts of his grandfather — a medicine man, a shaman, a healer. The same energy lives in him.</p>
                 <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 14 }}>JR does not need cards to know what others are feeling. His intuition is immediate, powerful, undeniable. There was a woman preparing for surgery on her hand. After working with JR, she canceled the surgery completely.</p>
                 <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED }}>He is fearless. Wild. Drawn to the edge. The same man who can race toward danger is the man who can sit in silence and help someone find themselves again.</p>
               </div>
@@ -343,7 +343,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* -- BOOK SECTION -- */}
+      {/* ── BOOK SECTION ── */}
       <section id="book-section" style={{ padding: `${SECTION_PY} ${PX}`, background: BLACK2, borderTop: '1px solid rgba(201,168,76,0.08)' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div className="two-col-grid">
@@ -351,7 +351,7 @@ export default function HomePage() {
               <p className="section-label" style={{ textAlign: 'left' }}>The Book</p>
               <h2 className="gold-text section-title" style={{ textAlign: 'left' }}>Life After Death</h2>
               <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.1rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 14 }}>
-                Star&apos;s memoir of the journey no one returns from -- and why she did. After her fatal accident, she was guided by Archangel Michael into realms of light, love, and divine truth beyond anything earthly language can fully hold.
+                Star&apos;s memoir of the journey no one returns from — and why she did. After her fatal accident, she was guided by Archangel Michael into realms of light, love, and divine truth beyond anything earthly language can fully hold.
               </p>
               <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.1rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 28, fontStyle: 'italic' }}>
                 <em>Life After Death</em> is a map for anyone who has lost someone, who fears death, or who senses there is more. It is proof, written in love.
@@ -370,7 +370,7 @@ export default function HomePage() {
                   href="/book?service=Life+After+Death+(Signed+Copy)&price=35"
                   style={{ border: '1px solid rgba(201,168,76,0.4)', color: CREAM, fontFamily: HEAD_FONT, fontSize: 'clamp(0.65rem,2.5vw,0.75rem)', letterSpacing: '0.18em', textTransform: 'uppercase', padding: '18px 20px', textDecoration: 'none', textAlign: 'center', display: 'block', wordBreak: 'break-word' }}
                 >
-                  Buy Signed Copy -- $35
+                  Buy Signed Copy — $35
                 </Link>
               </div>
             </div>
@@ -382,7 +382,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* -- TESTIMONIALS -- */}
+      {/* ── TESTIMONIALS ── */}
       <section id="testimonials" style={{ padding: `${SECTION_PY} ${PX}`, background: BLACK }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <p className="section-label">Client Voices</p>
@@ -401,7 +401,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* -- FAQ -- */}
+      {/* ── FAQ ── */}
       <section id="faq" style={{ padding: `${SECTION_PY} ${PX}`, background: BLACK2 }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <p className="section-label">Questions</p>
@@ -427,7 +427,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* -- INNER CIRCLE -- */}
+      {/* ── INNER CIRCLE ── */}
       <section id="inner-circle" style={{
         padding: `${SECTION_PY} ${PX}`,
         borderTop: '1px solid rgba(201,168,76,0.08)',
@@ -478,7 +478,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* -- CONTACT -- */}
+      {/* ── CONTACT ── */}
       <section id="contact" style={{ padding: `${SECTION_PY} ${PX}`, background: BLACK2 }}>
         <div style={{ maxWidth: 960, margin: '0 auto' }}>
           <p className="section-label">Find Us</p>
@@ -536,7 +536,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* -- FOOTER -- */}
+      {/* ── FOOTER ── */}
       <footer className="footer-safe" style={{ background: BLACK, borderTop: '1px solid rgba(201,168,76,0.1)', padding: `clamp(36px,6vw,48px) ${PX}`, paddingBottom: 'max(28px, env(safe-area-inset-bottom, 28px))', textAlign: 'center' }}>
         <p className="gold-text" style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: 'clamp(1rem,5vw,1.4rem)', fontWeight: 700, letterSpacing: '0.1em', marginBottom: 10 }}>Dolce Vida</p>
         <p style={{ fontFamily: BODY_FONT, fontStyle: 'italic', fontSize: 'clamp(0.95rem,3vw,1rem)', color: CREAM_MUTED, marginBottom: 20 }}>Change your energy. Transform your life.</p>

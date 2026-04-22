@@ -28,12 +28,10 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   height: 100%;
-  background-color: #080808 !important;
 }
 
 body {
-  background-color: #080808 !important;
-  background: #080808 !important;
+  background: var(--black);
   color: var(--cream);
   font-family: 'Cormorant Garamond', Georgia, serif;
   overflow-x: hidden;
