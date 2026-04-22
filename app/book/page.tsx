@@ -200,7 +200,7 @@ function BookingUI() {
               date ? ['Date', formatDate(date)] : null,
               time ? ['Time', time] : null,
               firstName ? ['Client', `${firstName} ${lastName}`.trim()] : null,
-            ] as ([string, string] | null)[]).filter(Boolean).map(([key, val]) => (
+            ] as ([string, string] | null)[]).filter((x): x is [string, string] => x !== null).map(([key, val]) => (
               <div key={key} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, marginBottom: 16 }}>
                 <span style={{ fontFamily: "'Cinzel',serif", fontSize: '0.55rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#D4C4A0', opacity: 0.6, whiteSpace: 'nowrap', paddingTop: 2 }}>{key}</span>
                 <span style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: '0.95rem', color: '#F5EDD6', textAlign: 'right', lineHeight: 1.4 }}>{val}</span>
