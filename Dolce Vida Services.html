@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Services — Dolce Vida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --black: #080808;
+  --black2: #0e0e0e;
+  --gold: #C9A84C;
+  --gold-light: #E8C96A;
+  --gold-dark: #8B6914;
+  --crimson: #8B1A1A;
+  --purple: #4A0E6B;
+  --purple-bright: #7B2FBE;
+  --cream: #F5EDD6;
+  --cream-muted: #D4C4A0;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 9999; opacity: 0.35; mix-blend-mode: overlay;
+}
+
+.gold-text {
+  background: linear-gradient(105deg,
+    #3d2000 0%, #8B6914 8%, #C9A84C 18%, #F5D778 28%, #FFE999 35%,
+    #C9A84C 42%, #8B6914 50%, #C9A84C 58%, #F5D778 65%,
+    #FFE999 72%, #E8C96A 80%, #8B6914 90%, #C9A84C 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: metalShimmer 4s linear infinite;
+}
+@keyframes metalShimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(8,8,8,0.7);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  padding: 18px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  box-shadow: 0 2px 40px rgba(0,0,0,0.4);
+}
+.nav-logo { font-family: 'Cinzel Decorative', serif; font-size: 1.3rem; font-weight: 700; letter-spacing: 0.12em; text-decoration: none; }
+.nav-links { display: flex; gap: 40px; list-style: none; }
+.nav-links a { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cream-muted); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: var(--gold); }
+.nav-cta { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light)); border: none; padding: 12px 28px; cursor: pointer; text-decoration: none; display: inline-block; transition: opacity 0.2s; font-weight: 600; }
+.nav-cta:hover { opacity: 0.88; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.hamburger span { display: block; width: 24px; height: 1.5px; background: var(--gold); }
+#mobile-menu { display: none; position: fixed; inset: 0; background: rgba(8,8,8,0.98); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 36px; }
+#mobile-menu.open { display: flex; }
+#mobile-menu a { font-family: 'Cinzel', serif; font-size: 1.2rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cream); text-decoration: none; }
+.menu-close { position: absolute; top: 24px; right: 32px; background: none; border: none; color: var(--gold); font-size: 2rem; cursor: pointer; }
+
+/* PAGE HERO */
+.page-hero {
+  position: relative; padding: 110px 20px 80px; text-align: center; overflow: hidden;
+  background: linear-gradient(180deg, #0a0510 0%, var(--black) 100%);
+}
+.page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(74,14,107,0.15) 0%, transparent 70%); pointer-events: none; }
+.page-eyebrow { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; display: block; }
+.page-title { font-family: 'Cinzel', serif; font-size: clamp(2.4rem, 6vw, 4.5rem); font-weight: 700; letter-spacing: 0.1em; line-height: 1.05; margin-bottom: 22px; }
+.page-sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.15rem, 2vw, 1.45rem); color: var(--cream-muted); max-width: 620px; margin: 0 auto; line-height: 1.75; }
+
+/* FILTER */
+.filter-wrap { max-width: 620px; margin: 0 auto 60px; padding: 0 20px; }
+.filter-tabs { display: flex; border: 1px solid rgba(201,168,76,0.2); overflow: hidden; }
+.filter-tab { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream-muted); background: transparent; border: none; padding: 16px 0; flex: 1; cursor: pointer; transition: all 0.3s; border-right: 1px solid rgba(201,168,76,0.2); }
+.filter-tab:last-child { border-right: none; }
+.filter-tab.active { background: rgba(201,168,76,0.1); color: var(--gold); }
+.filter-tab:hover { color: var(--gold); }
+
+/* CATEGORY LABEL */
+.cat-section-label {
+  font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.45em;
+  text-transform: uppercase; color: var(--gold); opacity: 0.65;
+  padding: 32px 0 14px; display: block;
+  border-bottom: 1px solid rgba(201,168,76,0.12); margin-bottom: 4px;
+}
+
+/* GRID */
+.services-wrap { max-width: 1280px; margin: 0 auto; padding: 0 20px 100px; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 2px; }
+
+/* CARD */
+.service-card {
+  background: rgba(14,14,14,0.6);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  padding: 36px;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 4px 32px rgba(0,0,0,0.3);
+  transition: all 0.35s; position: relative; overflow: hidden;
+}
+.service-card::before { content: ''; position: absolute; inset: 0; opacity: 0; transition: opacity 0.3s; }
+.service-card.gold-card::before { background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, transparent 100%); }
+.service-card.crimson-card::before { background: linear-gradient(135deg, rgba(139,26,26,0.1) 0%, transparent 100%); }
+.service-card.purple-card::before { background: linear-gradient(135deg, rgba(74,14,107,0.12) 0%, transparent 100%); }
+.service-card:hover::before { opacity: 1; }
+.service-card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-3px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 12px 48px rgba(0,0,0,0.4); }
+.service-card.hidden { display: none; }
+
+.service-badge { font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.3em; text-transform: uppercase; padding: 5px 12px; display: inline-block; margin-bottom: 18px; }
+.badge-gold { background: rgba(201,168,76,0.12); color: var(--gold); border: 1px solid rgba(201,168,76,0.3); }
+.badge-crimson { background: rgba(139,26,26,0.18); color: #E05555; border: 1px solid rgba(139,26,26,0.4); }
+.badge-purple { background: rgba(74,14,107,0.18); color: var(--purple-bright); border: 1px solid rgba(123,47,190,0.4); }
+
+.service-name { font-family: 'Cinzel', serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.1em; color: var(--cream); margin-bottom: 10px; }
+.service-meta { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: var(--cream-muted); font-style: italic; margin-bottom: 14px; opacity: 0.7; }
+.service-desc { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; line-height: 1.72; color: var(--cream-muted); margin-bottom: 22px; }
+.service-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06); }
+.service-price { font-family: 'Cinzel', serif; font-size: 1.35rem; font-weight: 600; }
+.service-book { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: gap 0.2s; background: none; border: none; cursor: pointer; }
+.service-book:hover { gap: 10px; }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* FOOTER */
+footer { background: var(--black); border-top: 1px solid rgba(201,168,76,0.1); padding: 56px 20px; text-align: center; }
+.footer-logo { font-family: 'Cinzel Decorative', serif; font-size: 1.5rem; font-weight: 700; letter-spacing: 0.12em; margin-bottom: 12px; }
+.footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: var(--cream-muted); margin-bottom: 24px; }
+.footer-legal { font-family: 'Cormorant Garamond', serif; font-size: 0.8rem; color: var(--cream-muted); opacity: 0.3; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  nav { padding: 14px 20px; }
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .services-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  nav { padding: 12px 16px; }
+  .page-hero { padding: 80px 16px 56px; }
+  .filter-tab { font-size: 0.52rem; padding: 14px 4px; letter-spacing: 0.1em; }
+  .service-card { padding: 26px 20px; }
+  .service-name { font-size: 0.85rem; }
+  .service-desc { font-size: 1.05rem; }
+  .service-price { font-size: 1.2rem; }
+}
+</style>
+</head>
+<body>
+
+<div id="mobile-menu">
+  <button class="menu-close" onclick="document.getElementById('mobile-menu').classList.remove('open')">✕</button>
+  <a href="Dolce Vida.html">Home</a>
+  <a href="Dolce Vida.html#about">About</a>
+  <a href="Dolce Vida Services.html" class="active">Services</a>
+  <a href="Dolce Vida.html#book-section">The Book</a>
+  <a href="Dolce Vida.html#testimonials">Reviews</a>
+  <a href="Dolce Vida.html#contact">Contact</a>
+  <a href="Dolce Vida Book.html" style="margin-top:12px; font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:#080808; background:linear-gradient(135deg,#8B6914,#C9A84C,#E8C96A); padding:14px 32px; text-decoration:none;">Book Now</a>
+</div>
+
+<nav>
+  <a href="Dolce Vida.html" class="nav-logo gold-text">Dolce Vida</a>
+  <ul class="nav-links">
+    <li><a href="Dolce Vida.html#about">About</a></li>
+    <li><a href="Dolce Vida Services.html" class="active">Services</a></li>
+    <li><a href="Dolce Vida.html#book-section">The Book</a></li>
+    <li><a href="Dolce Vida.html#testimonials">Reviews</a></li>
+    <li><a href="Dolce Vida.html#contact">Contact</a></li>
+  </ul>
+  <a href="Dolce Vida Book.html" class="nav-cta">Book Now</a>
+  <button class="hamburger" onclick="document.getElementById('mobile-menu').classList.add('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page-hero">
+  <span class="page-eyebrow">Sacred Offerings</span>
+  <h1 class="page-title gold-text">Choose Your Path</h1>
+  <p class="page-sub">Every service is a doorway. Enter where you are called.</p>
+</div>
+
+<div class="filter-wrap">
+  <div class="filter-tabs">
+    <button class="filter-tab active" onclick="filterServices('all',this)">All</button>
+    <button class="filter-tab" onclick="filterServices('reading',this)">Readings</button>
+    <button class="filter-tab" onclick="filterServices('ritual',this)">Rituals</button>
+    <button class="filter-tab" onclick="filterServices('healing',this)">Healing</button>
+  </div>
+</div>
+
+<div class="services-wrap">
+
+  <!-- READINGS -->
+  <span class="cat-section-label" id="label-reading">Readings &amp; Tarot</span>
+  <div class="services-grid" id="grid-reading">
+
+    <div class="service-card gold-card reveal" data-category="reading">
+      <span class="service-badge badge-gold">Reading</span>
+      <p class="service-name">15 Min Tarot Reading</p>
+      <p class="service-meta">15 minutes · Quick focused reading</p>
+      <p class="service-desc">A swift, precise reading for one burning question or a single area of life. Clear, direct, powerful.</p>
+      <div class="service-footer">
+        <span class="service-price gold-text">$75</span>
+        <a href="Dolce Vida Book.html?slug=15-min-tarot-reading&service=15+Min+Tarot+Reading&price=75" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+    <div class="service-card gold-card reveal" data-category="reading">
+      <span class="service-badge badge-gold">Reading</span>
+      <p class="service-name">30 Minute FaceTime Tarot Reading</p>
+      <p class="service-meta">30 minutes · Via FaceTime</p>
+      <p class="service-desc">A deeper intuitive reading from the comfort of your home. Relationships, career, spiritual path — all illuminated.</p>
+      <div class="service-footer">
+        <span class="service-price gold-text">$100</span>
+        <a href="Dolce Vida Book.html?slug=30-minute-facetime-tarot-reading&service=30+Minute+FaceTime+Tarot+Reading&price=100" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+    <div class="service-card gold-card reveal" data-category="reading">
+      <span class="service-badge badge-gold">Reading</span>
+      <p class="service-name">1.5 Hour In-Person Tarot Reading</p>
+      <p class="service-meta">90 minutes · In person · Reno, NV</p>
+      <p class="service-desc">A full in-person session — life path, spirit guides, loved ones, blocks, and practical next steps. The complete experience.</p>
+      <div class="service-footer">
+        <span class="service-price gold-text">$268</span>
+        <a href="Dolce Vida Book.html?slug=1.5-hour-in-person-tarot-reading&service=1.5+Hour+In-Person+Tarot+Reading&price=268" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+    <div class="service-card gold-card reveal" data-category="reading">
+      <span class="service-badge badge-gold">Reading</span>
+      <p class="service-name">Couples Tarot Reading</p>
+      <p class="service-meta">60 minutes · For two</p>
+      <p class="service-desc">Clarity for two — relationship dynamics, energy alignment, karmic ties, and the path forward together.</p>
+      <div class="service-footer">
+        <span class="service-price gold-text">$289</span>
+        <a href="Dolce Vida Book.html?slug=couples-tarot-reading&service=Couples+Tarot+Reading&price=289" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+    <div class="service-card gold-card reveal" data-category="reading">
+      <span class="service-badge badge-gold">Reading</span>
+      <p class="service-name">EMERGENCY Tarot Reading</p>
+      <p class="service-meta">30 minutes · Same-day urgent session</p>
+      <p class="service-desc">When life demands answers now. Same-day priority booking for urgent guidance in moments of crisis or crossroads.</p>
+      <div class="service-footer">
+        <span class="service-price gold-text">$308</span>
+        <a href="Dolce Vida Book.html?slug=emergency-tarot-reading&service=EMERGENCY+Tarot+Reading&price=308" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+    <div class="service-card gold-card reveal" data-category="reading">
+      <span class="service-badge badge-gold">Reading</span>
+      <p class="service-name">Grief &amp; Deceased Tarot Reading</p>
+      <p class="service-meta">60 minutes · Connect with loved ones who have passed</p>
+      <p class="service-desc">A sacred session to connect with those who have crossed over. Receive messages, find closure, and feel their presence.</p>
+      <div class="service-footer">
+        <span class="service-price gold-text">$350</span>
+        <a href="Dolce Vida Book.html?slug=grief-deceased-tarot-reading&service=Grief+%26+Deceased+Tarot+Reading&price=350" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+    <div class="service-card gold-card reveal" data-category="reading">
+      <span class="service-badge badge-gold">Reading</span>
+      <p class="service-name">Spirit Guide Discovery</p>
+      <p class="service-meta">60 minutes · Meet your guides</p>
+      <p class="service-desc">Discover who your spirit guides are, what messages they carry for you, and how to deepen your connection with them.</p>
+      <div class="service-footer">
+        <span class="service-price gold-text">$300</span>
+        <a href="Dolce Vida Book.html?slug=find-out-who-your-spirit-guides-are-spirit-guide-discovery&service=Spirit+Guide+Discovery&price=300" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RITUALS -->
+  <span class="cat-section-label" id="label-ritual">Rituals &amp; Cleansing</span>
+  <div class="services-grid" id="grid-ritual">
+
+    <div class="service-card crimson-card reveal" data-category="ritual">
+      <span class="service-badge badge-crimson">Ritual</span>
+      <p class="service-name">Tuning Fork Alignment</p>
+      <p class="service-meta">45 minutes · Sound healing</p>
+      <p class="service-desc">Sacred sound frequencies applied to the body's energy centers to restore balance, reduce anxiety, and open blocked chakras.</p>
+      <div class="service-footer">
+        <span class="service-price" style="color:#E05555">$100</span>
+        <a href="Dolce Vida Book.html?slug=tuning-fork-alignment&service=Tuning+Fork+Alignment&price=100" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+    <div class="service-card crimson-card reveal" data-category="ritual">
+      <span class="service-badge badge-crimson">Ritual</span>
+      <p class="service-name">Energy Egg Cleanse + Tuning Fork</p>
+      <p class="service-meta">60 minutes · Combined ritual</p>
+      <p class="service-desc">Limpia egg cleanse draws out dense energies, followed by vibrational tuning fork realignment. Deeply purifying.</p>
+      <div class="service-footer">
+        <span class="service-price" style="color:#E05555">$148</span>
+        <a href="Dolce Vida Book.html?slug=energy-egg-cleanse-tuning-fork-alignment&service=Energy+Egg+Cleanse+%2B+Tuning+Fork&price=148" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+    <div class="service-card crimson-card reveal" data-category="ritual">
+      <span class="service-badge badge-crimson">Ritual</span>
+      <p class="service-name">Fire Cleanse</p>
+      <p class="service-meta">90 minutes · Sacred fire ceremony</p>
+      <p class="service-desc">A powerful full-body energetic purification using sacred fire ceremony. Deep release of stagnant energy, trauma, and spiritual debris.</p>
+      <div class="service-footer">
+        <span class="service-price" style="color:#E05555">$1,200</span>
+        <a href="Dolce Vida Book.html?slug=fire-cleanse&service=Fire+Cleanse&price=1200" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+    <div class="service-card crimson-card reveal" data-category="ritual">
+      <span class="service-badge badge-crimson">Ritual</span>
+      <p class="service-name">Home Cleanse</p>
+      <p class="service-meta">120 minutes · Full home energy clearing</p>
+      <p class="service-desc">Complete spiritual clearing of your home — removing negative entities, residual energy, and creating sacred protective boundaries.</p>
+      <div class="service-footer">
+        <span class="service-price" style="color:#E05555">$1,200</span>
+        <a href="Dolce Vida Book.html?slug=home-cleanse&service=Home+Cleanse&price=1200" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+    <div class="service-card crimson-card reveal" data-category="ritual">
+      <span class="service-badge badge-crimson">Ritual</span>
+      <p class="service-name">Hex Removal</p>
+      <p class="service-meta">90 minutes · Complete removal + sealing</p>
+      <p class="service-desc">Identification and complete removal of psychic attacks, curses, and energetic bindings. Protective sealing to prevent re-entry.</p>
+      <div class="service-footer">
+        <span class="service-price" style="color:#E05555">$1,500</span>
+        <a href="Dolce Vida Book.html?slug=hex-removal&service=Hex+Removal&price=1500" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+    <div class="service-card crimson-card reveal" data-category="ritual">
+      <span class="service-badge badge-crimson">Ritual</span>
+      <p class="service-name">Business Energy Cleanse</p>
+      <p class="service-meta">120 minutes · Commercial space clearing</p>
+      <p class="service-desc">Clear stagnant, negative, or blocked energy from your business space. Attract prosperity, aligned clients, and positive flow.</p>
+      <div class="service-footer">
+        <span class="service-price" style="color:#E05555">$2,000</span>
+        <a href="Dolce Vida Book.html?slug=business-energy-cleanse&service=Business+Energy+Cleanse&price=2000" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- HEALING -->
+  <span class="cat-section-label" id="label-healing">Counseling &amp; Healing</span>
+  <div class="services-grid" id="grid-healing">
+
+    <div class="service-card purple-card reveal" data-category="healing">
+      <span class="service-badge badge-purple">Healing</span>
+      <p class="service-name">Spiritual Awakening Counseling</p>
+      <p class="service-meta">60 minutes · Navigate your awakening</p>
+      <p class="service-desc">Grounded guidance for those experiencing spiritual awakening — navigating new sensitivities, gifts, confusion, and transformation.</p>
+      <div class="service-footer">
+        <span class="service-price" style="color:var(--purple-bright)">$200</span>
+        <a href="Dolce Vida Book.html?slug=spiritual-awakening-counseling&service=Spiritual+Awakening+Counseling&price=200" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+    <div class="service-card purple-card reveal" data-category="healing">
+      <span class="service-badge badge-purple">Healing</span>
+      <p class="service-name">Hypnosis</p>
+      <p class="service-meta">60 minutes · Subconscious reprogramming</p>
+      <p class="service-desc">Certified clinical hypnosis — anxiety, confidence, habits, trauma, and transformation at the root subconscious level.</p>
+      <div class="service-footer">
+        <span class="service-price" style="color:var(--purple-bright)">$250</span>
+        <a href="Dolce Vida Book.html?slug=hypnosis&service=Hypnosis&price=250" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+    <div class="service-card purple-card reveal" data-category="healing">
+      <span class="service-badge badge-purple">Healing</span>
+      <p class="service-name">Past Life Regression</p>
+      <p class="service-meta">90 minutes · Journey into previous lifetimes</p>
+      <p class="service-desc">Guided hypnotic journey into previous lifetimes — healing recurring patterns, unexplained fears, and soul contracts.</p>
+      <div class="service-footer">
+        <span class="service-price" style="color:var(--purple-bright)">$350</span>
+        <a href="Dolce Vida Book.html?slug=past-life-regression&service=Past+Life+Regression&price=350" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+    <div class="service-card purple-card reveal" data-category="healing">
+      <span class="service-badge badge-purple">Healing</span>
+      <p class="service-name">Past Life Regression + Tarot Reading</p>
+      <p class="service-meta">90 minutes · Regression + tarot integration</p>
+      <p class="service-desc">Journey into past lives, then anchor the insights with a tarot reading in your present. The most complete healing session.</p>
+      <div class="service-footer">
+        <span class="service-price" style="color:var(--purple-bright)">$400</span>
+        <a href="Dolce Vida Book.html?slug=past-life-regression-tarot-reading&service=Past+Life+Regression+%2B+Tarot&price=400" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+    <div class="service-card purple-card reveal" data-category="healing">
+      <span class="service-badge badge-purple">Healing</span>
+      <p class="service-name">3-Pack Hypnosis Sessions</p>
+      <p class="service-meta">3 sessions · Compounding transformation</p>
+      <p class="service-desc">Three focused sessions targeting the same core issue — building on each session for lasting, measurable change.</p>
+      <div class="service-footer">
+        <span class="service-price" style="color:var(--purple-bright)">$550</span>
+        <a href="Dolce Vida Book.html?slug=3-pack-hypnosis-sessions&service=3-Pack+Hypnosis+Sessions&price=550" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+    <div class="service-card purple-card reveal" data-category="healing">
+      <span class="service-badge badge-purple">Healing</span>
+      <p class="service-name">Hypnosis 6-Pack Sessions</p>
+      <p class="service-meta">6 sessions · Deep sustained transformation</p>
+      <p class="service-desc">Six sessions for maximum reprogramming — phobias, chronic patterns, spiritual blocks, and complete mindset rebuilding.</p>
+      <div class="service-footer">
+        <span class="service-price" style="color:var(--purple-bright)">$1,000</span>
+        <a href="Dolce Vida Book.html?slug=hypnosis-6-pack-sessions&service=Hypnosis+6-Pack+Sessions&price=1000" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+    <div class="service-card purple-card reveal" data-category="healing">
+      <span class="service-badge badge-purple">Healing</span>
+      <p class="service-name">Guided Meditations</p>
+      <p class="service-meta">60 minutes · Personalized journey</p>
+      <p class="service-desc">Personalized guided meditation — chakra opening, spirit contact, inner child healing, or divine alignment. Deeply restorative.</p>
+      <div class="service-footer">
+        <span class="service-price" style="color:var(--purple-bright)">$198</span>
+        <a href="Dolce Vida Book.html?slug=guided-meditations&service=Guided+Meditations&price=198" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+    <div class="service-card purple-card reveal" data-category="healing">
+      <span class="service-badge badge-purple">Healing</span>
+      <p class="service-name">Self Mastery: All Courses Package</p>
+      <p class="service-meta">90 minutes · Complete self mastery bundle</p>
+      <p class="service-desc">The complete self mastery experience — a comprehensive bundle combining all course elements for total transformation.</p>
+      <div class="service-footer">
+        <span class="service-price" style="color:var(--purple-bright)">$1,980</span>
+        <a href="Dolce Vida Book.html?slug=self-mastery-all-courses-package-deal&service=Self+Mastery+Package&price=1980" class="service-book">Book This →</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  <p class="footer-logo gold-text">Dolce Vida</p>
+  <p class="footer-tagline">Change your energy. Transform your life.</p>
+  <p class="footer-legal">© 2026 Dolce Vida · Star Monreal · Reno, NV · info@dolcevida.pink · 775-400-9649</p>
+</footer>
+
+<script>
+function filterServices(cat, btn) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+
+  const cats = ['reading', 'ritual', 'healing'];
+  cats.forEach(c => {
+    const label = document.getElementById('label-' + c);
+    const grid  = document.getElementById('grid-' + c);
+    const show  = cat === 'all' || cat === c;
+    if (label) label.style.display = show ? 'block' : 'none';
+    if (grid)  grid.style.display  = show ? 'grid'  : 'none';
+  });
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

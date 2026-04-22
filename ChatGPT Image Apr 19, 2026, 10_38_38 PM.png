@@ -1,0 +1,31 @@
+import Link from 'next/link'
+
+export default function SuccessPage() {
+  return (
+    <main style={{ minHeight: '100vh', background: '#080808', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px 20px' }}>
+      <div style={{ textAlign: 'center', maxWidth: 600 }}>
+        <div style={{ fontSize: '3.5rem', color: '#C9A84C', marginBottom: 32, animation: 'fadeUp 1s ease both' }}>✦</div>
+        <h1 className="gold-text" style={{ fontFamily: "'Cinzel', serif", fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 600, letterSpacing: '0.1em', marginBottom: 24, animation: 'fadeUp 1s ease 0.2s both' }}>
+          Booking Confirmed
+        </h1>
+        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(1.1rem,1.8vw,1.3rem)', color: '#D4C4A0', lineHeight: 1.8, marginBottom: 48, fontStyle: 'italic', animation: 'fadeUp 1s ease 0.4s both' }}>
+          Thank you. Your session has been reserved and a confirmation has been sent to your email. Star and her team look forward to welcoming you.
+        </p>
+        <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', animation: 'fadeUp 1s ease 0.6s both' }}>
+          <Link href="/" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.65rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: '#080808', background: 'linear-gradient(135deg,#8B6914,#C9A84C,#E8C96A)', padding: '18px 40px', textDecoration: 'none', display: 'inline-block' }}>
+            Return Home
+          </Link>
+          <Link href="/services" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.65rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: '#F5EDD6', background: 'transparent', border: '1px solid rgba(201,168,76,0.4)', padding: '18px 40px', textDecoration: 'none', display: 'inline-block' }}>
+            Browse Services
+          </Link>
+        </div>
+        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '0.9rem', color: '#D4C4A0', opacity: 0.4, marginTop: 48 }}>
+          Questions? Contact us at{' '}
+          <a href="mailto:info@dolcevida.pink" style={{ color: '#C9A84C', textDecoration: 'none' }}>info@dolcevida.pink</a>
+          {' '}or call{' '}
+          <a href="tel:7754009649" style={{ color: '#C9A84C', textDecoration: 'none' }}>775-400-9649</a>
+        </p>
+      </div>
+    </main>
+  )
+}
