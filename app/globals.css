@@ -11,14 +11,24 @@
   --gold-light: #E8C96A;
   --gold-dark: #8B6914;
   --crimson: #8B1A1A;
-  --purple: #4A0E6B;
-  --purple-bright: #7B2FBE;
   --cream: #F5EDD6;
   --cream-muted: #D4C4A0;
+  /* Safe horizontal padding used everywhere */
+  --px: clamp(16px, 5vw, 40px);
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+/* ===================== RESET & BASE ===================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  height: 100%;
+}
 
 body {
   background: var(--black);
@@ -26,8 +36,18 @@ body {
   font-family: 'Cormorant Garamond', Georgia, serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  min-height: 100%;
+  /* Safe area sides */
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===================== COMPONENTS ===================== */
 @layer components {
   .gold-text {
     background: linear-gradient(
@@ -44,17 +64,46 @@ body {
   }
 
   .btn-primary {
-    @apply inline-block font-cinzel text-[#080808] text-[0.65rem] tracking-[0.25em] uppercase px-10 py-[18px] border-none cursor-pointer no-underline transition-all duration-300;
+    display: block;
+    width: 100%;
+    font-family: 'Cinzel', serif;
+    color: #080808;
+    font-size: clamp(0.65rem, 2.5vw, 0.75rem);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 700;
     background: linear-gradient(135deg, #8B6914 0%, #C9A84C 50%, #E8C96A 100%);
+    text-align: center;
+    /* No white-space: nowrap — let it wrap if needed */
+    word-break: break-word;
   }
   .btn-primary:hover {
-    @apply opacity-90 -translate-y-0.5;
+    opacity: 0.9;
     box-shadow: 0 12px 40px rgba(201, 168, 76, 0.3);
+    transform: translateY(-1px);
   }
 
   .btn-ghost {
-    @apply inline-block font-cinzel text-[#F5EDD6] text-[0.65rem] tracking-[0.25em] uppercase px-10 py-[18px] bg-transparent cursor-pointer no-underline transition-all duration-300;
+    display: block;
+    width: 100%;
+    font-family: 'Cinzel', serif;
+    color: #F5EDD6;
+    font-size: clamp(0.65rem, 2.5vw, 0.75rem);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 16px 20px;
+    background: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
     border: 1px solid rgba(201, 168, 76, 0.4);
+    text-align: center;
+    word-break: break-word;
   }
   .btn-ghost:hover {
     border-color: #C9A84C;
@@ -63,25 +112,94 @@ body {
   }
 
   .section-label {
-    @apply font-cinzel text-[0.6rem] tracking-[0.45em] uppercase text-center block;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.55rem, 2vw, 0.65rem);
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
     color: var(--gold);
     margin-bottom: 16px;
   }
 
   .section-title {
-    @apply font-cinzel font-semibold tracking-[0.08em] text-center;
-    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-align: center;
+    font-size: clamp(1.6rem, 6vw, 3.2rem);
     line-height: 1.15;
     margin-bottom: 20px;
   }
 }
 
+/* ===================== ANIMATIONS ===================== */
 @keyframes metalShimmer {
   0% { background-position: 0% center; }
   100% { background-position: 200% center; }
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ===================== LAYOUT UTILITIES ===================== */
+
+/* Two-col: side-by-side on tablet+, stacked on mobile */
+.two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+/* Belief pillars / testimonials: auto-fill responsive grid */
+.auto-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+/* Stats row */
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(28px, 6vw, 60px);
+}
+
+/* Footer nav */
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(14px, 4vw, 28px);
+}
+
+/* ===================== NAV VISIBILITY ===================== */
+.nav-desktop { display: none; }
+.book-now-desktop { display: none; }
+.mobile-menu-btn { display: flex; }
+
+/* ===================== TABLET & DESKTOP ===================== */
+@media (min-width: 640px) {
+  .auto-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 2px;
+  }
+}
+
+@media (min-width: 768px) {
+  .two-col-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 5vw, 60px);
+  }
+
+  .nav-desktop { display: flex !important; }
+  .book-now-desktop { display: inline-block !important; }
+  .mobile-menu-btn { display: none !important; }
+
+  /* Portrait images: restore 3/4 on desktop */
+  .img-portrait-mobile { aspect-ratio: 3/4 !important; }
+}
+
+/* ===================== SAFE AREA FOOTER ===================== */
+.footer-safe {
+  padding-bottom: max(28px, env(safe-area-inset-bottom, 28px));
 }
