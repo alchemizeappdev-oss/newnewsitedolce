@@ -1,0 +1,28 @@
+import type { Metadata } from 'next'
+import './globals.css'
+
+export const metadata: Metadata = {
+  title: 'Dolce Vida — Change Your Energy. Transform Your Life.',
+  description: 'Star Monreal is an intuitive medium, spiritual guide, hypnosis practitioner, and author of Life After Death. Based in Reno, Nevada.',
+  keywords: 'spiritual readings, intuitive medium, hypnosis, past life regression, energy healing, Reno Nevada, Star Monreal, Dolce Vida',
+  openGraph: {
+    title: 'Dolce Vida',
+    description: 'Change your energy. Transform your life.',
+    url: 'https://dolcevida.pink',
+    siteName: 'Dolce Vida',
+    locale: 'en_US',
+    type: 'website',
+  },
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  )
+}
