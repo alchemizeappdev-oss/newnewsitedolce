@@ -261,11 +261,10 @@ export default function HomePage() {
         id="about"
         style={{
           padding: `${SECTION_PY} ${PX}`,
-          background: `url('/images/about-bg.jpg') center center / cover no-repeat`,
+          background: BLACK,
           position: 'relative',
         }}
       >
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(8,8,8,0.45)', zIndex: 0 }} />
         <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
           {/* Opening statement */}
@@ -429,8 +428,18 @@ export default function HomePage() {
       </section>
 
       {/* ── INNER CIRCLE ── */}
-      <section id="inner-circle" style={{ padding: `${SECTION_PY} ${PX}`, background: BLACK, borderTop: '1px solid rgba(201,168,76,0.08)' }}>
-        <div style={{ maxWidth: 540, margin: '0 auto', textAlign: 'center' }}>
+      <section id="inner-circle" style={{
+        padding: `${SECTION_PY} ${PX}`,
+        borderTop: '1px solid rgba(201,168,76,0.08)',
+        position: 'relative',
+        backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Apr%2019%2C%202026%2C%2010_03_46%20PM-BPzzECOH2TDIMHFRWb6EQWxfYW1et6.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center top',
+        backgroundRepeat: 'no-repeat',
+      }}>
+        {/* Dark overlay keeps text legible without washing out the image */}
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(8,8,8,0.58)', zIndex: 0 }} />
+        <div style={{ maxWidth: 540, margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <p className="section-label">The Inner Circle</p>
           <h2 className="gold-text section-title">Enter the Inner Circle</h2>
           <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3.5vw,1.1rem)', lineHeight: 1.8, color: CREAM_MUTED, marginBottom: 32 }}>
@@ -465,6 +474,7 @@ export default function HomePage() {
               <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(0.85rem,3vw,0.95rem)', fontStyle: 'italic', color: CREAM_MUTED, opacity: 0.5 }}>Sacred space. No spam, ever. Unsubscribe anytime.</p>
             </form>
           )}
+        </div>
         </div>
       </section>
 
