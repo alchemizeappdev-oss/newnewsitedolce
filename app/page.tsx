@@ -211,11 +211,7 @@ export default function HomePage() {
 
       {/* BOOK SECTION */}
       <section id="book-section" style={{ padding: '120px 20px', background: 'var(--black2)', borderTop: '1px solid rgba(201,168,76,0.08)' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(240px,300px) 1fr minmax(280px,360px)', gap: 60, alignItems: 'center' }}>
-          {/* Book cover */}
-          <div style={{ position: 'relative', aspectRatio: '3/4', boxShadow: '0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(201,168,76,0.15)' }}>
-            <Image src="/images/book-cover.png" alt="Life After Death by Star Monreal" fill style={{ objectFit: 'cover', borderRadius: 4 }} />
-          </div>
+        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr minmax(280px,360px)', gap: 60, alignItems: 'center' }}>
           {/* Text */}
           <div>
             <p className="section-label" style={{ textAlign: 'left' }}>The Book</p>
