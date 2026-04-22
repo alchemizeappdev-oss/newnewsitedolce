@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -30,50 +30,10 @@ export default function HomePage() {
   const [icName, setIcName] = useState('')
   const [icEmail, setIcEmail] = useState('')
   const [icDone, setIcDone] = useState(false)
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
-
-    let raf: number
-    const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight }
-    resize()
-    window.addEventListener('resize', resize)
-
-    const particles = Array.from({ length: 200 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 1.2 + 0.2,
-      dx: (Math.random() - 0.5) * 0.25,
-      dy: (Math.random() - 0.5) * 0.25,
-      o: Math.random() * 0.5 + 0.1,
-    }))
-
-    const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-      particles.forEach(p => {
-        ctx.beginPath()
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(201,168,76,${p.o})`
-        ctx.fill()
-        p.x += p.dx
-        p.y += p.dy
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1
-      })
-      raf = requestAnimationFrame(draw)
-    }
-    draw()
-    return () => { cancelAnimationFrame(raf); window.removeEventListener('resize', resize) }
   }, [])
 
   const navStyle: React.CSSProperties = {
@@ -115,12 +75,17 @@ export default function HomePage() {
 
       {/* HERO */}
       <section id="hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', overflow: 'hidden' }}>
-        <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-          <Image src="/images/hero-tarot.png" alt="Dolce Vida tarot card in golden storm clouds" fill style={{ objectFit: 'cover', objectPosition: 'center' }} priority />
-          <div style={{ position: 'absolute', inset: 0, background: 'rgba(8,8,8,0.55)' }} />
-        </div>
-        <div style={{ position: 'relative', zIndex: 2, padding: '0 20px', maxWidth: 800 }}>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
+        >
+          <source src="/videos/hero.mp4" type="video/mp4" />
+        </video>
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(8,8,8,0.45)', zIndex: 1 }} />
+        <div style={{ position: 'relative', zIndex: 2, padding: '0 20px', maxWidth: 800, marginTop: '60px' }}>
           <p style={{ fontFamily: "'Cinzel',serif", fontSize: '0.65rem', letterSpacing: '0.45em', textTransform: 'uppercase', color: '#C9A84C', marginBottom: 24, opacity: 0.85 }}>Reno, Nevada · Star Monreal</p>
           <h1 className="gold-text" style={{ fontFamily: "'Cinzel',serif", fontSize: 'clamp(4rem,10vw,8rem)', fontWeight: 700, letterSpacing: '0.08em', lineHeight: 1, marginBottom: 28 }}>Dolce<br />Vida</h1>
           <p style={{ fontFamily: "'Cormorant Garamond',serif", fontStyle: 'italic', fontSize: 'clamp(1.2rem,2vw,1.5rem)', color: '#D4C4A0', marginBottom: 48 }}>Change your energy. <em>Transform your life.</em></p>
