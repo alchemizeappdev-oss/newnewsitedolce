@@ -102,7 +102,7 @@ export default function HomePage() {
 
       {/* ABOUT */}
       <section id="about" style={{ padding: '120px 20px', background: `url('/images/about-bg.jpg') center center / cover no-repeat`, position: 'relative' }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(8,8,8,0.72)', zIndex: 0 }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(8,8,8,0.45)', zIndex: 0 }} />
         <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
           {/* Opening statement */}
