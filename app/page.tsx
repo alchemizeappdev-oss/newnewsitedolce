@@ -148,15 +148,15 @@ export default function HomePage() {
 
           {/* Star's story — two column */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center', marginBottom: 80 }} className="about-grid">
-            <div style={{ position: 'relative', aspectRatio: '3/4', boxShadow: '0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(201,168,76,0.15)' }}>
-              <Image src="/images/book-hero.jpg" alt="Life After Death book surrounded by roses" fill style={{ objectFit: 'cover', borderRadius: 4 }} />
-            </div>
             <div>
               <p className="section-label" style={{ textAlign: 'left' }}>Star Monreal</p>
               <h3 style={{ fontFamily: "'Cinzel',serif", fontSize: 'clamp(1.4rem,2.5vw,2rem)', letterSpacing: '0.06em', marginBottom: 24, color: '#F5EDD6' }}>She came back<br />with a transmission.</h3>
               <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 'clamp(1rem,1.4vw,1.15rem)', lineHeight: 1.85, color: '#D4C4A0', marginBottom: 16 }}>She stood beyond the veil — not in darkness, not in fear — in a peace so complete it erased every question she had ever carried. In a love so vast it made every wound, every heartbreak, every year of feeling lost suddenly make sense.</p>
               <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 'clamp(1rem,1.4vw,1.15rem)', lineHeight: 1.85, color: '#D4C4A0', marginBottom: 16 }}>In the presence of the Creator and <strong style={{ color: '#F5EDD6' }}>Archangel Michael</strong>, she was shown what most people spend their entire lives searching for: truth, purpose, and the real reason the soul chooses to come here. And then she came back.</p>
               <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: 'clamp(1rem,1.4vw,1.15rem)', lineHeight: 1.85, color: '#D4C4A0' }}>Waking up was not a relief. It was a reckoning. She returned knowing that people are living far beneath their power. That spirits are exhausted, energy is blocked, and people have forgotten who they really are. <strong style={{ color: '#F5EDD6' }}>That is why Dolce Vida was born.</strong></p>
+            </div>
+            <div style={{ position: 'relative', aspectRatio: '3/4', boxShadow: '0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(201,168,76,0.15)' }}>
+              <Image src="/images/book-hero.jpg" alt="Life After Death book surrounded by roses" fill style={{ objectFit: 'cover', borderRadius: 4 }} />
             </div>
           </div>
 
