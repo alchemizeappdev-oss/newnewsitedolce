@@ -475,7 +475,6 @@ export default function HomePage() {
             </form>
           )}
         </div>
-        </div>
       </section>
 
       {/* ── CONTACT ── */}
