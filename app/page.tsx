@@ -148,8 +148,8 @@ export default function HomePage() {
 
           {/* Star's story — two column */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center', marginBottom: 80 }} className="about-grid">
-            <div style={{ position: 'relative', aspectRatio: '3/4', background: '#000', border: '1px solid rgba(201,168,76,0.2)', overflow: 'hidden' }}>
-              <Image src="/images/about-portal.png" alt="Star Monreal opening the Dolce Vida door" fill style={{ objectFit: 'cover' }} />
+            <div style={{ position: 'relative', aspectRatio: '3/4', boxShadow: '0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(201,168,76,0.15)' }}>
+              <Image src="/images/book-hero.jpg" alt="Life After Death book surrounded by roses" fill style={{ objectFit: 'cover', borderRadius: 4 }} />
             </div>
             <div>
               <p className="section-label" style={{ textAlign: 'left' }}>Star Monreal</p>
@@ -211,16 +211,13 @@ export default function HomePage() {
 
       {/* BOOK SECTION */}
       <section id="book-section" style={{ padding: '120px 20px', background: 'var(--black2)', borderTop: '1px solid rgba(201,168,76,0.08)' }}>
-        <div style={{ maxWidth: 1300, margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(280px, 320px) 1fr minmax(300px, 380px)', gap: 60, alignItems: 'center' }}>
-          {/* Left book cover */}
-          <div style={{ width: '100%', minWidth: 0 }}>
+        <div style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
+          <div style={{ maxWidth: 340, margin: '0 auto' }}>
             <div style={{ position: 'relative', aspectRatio: '3/4', boxShadow: '0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(201,168,76,0.15)' }}>
               <Image src="/images/book-cover.png" alt="Life After Death by Star Monreal" fill style={{ objectFit: 'cover', borderRadius: 4 }} />
             </div>
           </div>
-
-          {/* Center text content */}
-          <div style={{ minWidth: 0 }}>
+          <div>
             <p className="section-label" style={{ textAlign: 'left' }}>The Book</p>
             <h2 className="gold-text section-title" style={{ textAlign: 'left' }}>Life After Death</h2>
             <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: '1.1rem', lineHeight: 1.85, color: '#D4C4A0', marginBottom: 16 }}>Star's memoir of the journey no one returns from — and why she did. After her fatal accident, she was guided by Archangel Michael into realms of light, love, and divine truth beyond anything earthly language can fully hold.</p>
@@ -228,13 +225,6 @@ export default function HomePage() {
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
               <a href="https://www.amazon.com/dp/B0DFZZ3X5R" target="_blank" rel="noopener noreferrer" className="btn-primary">Order on Amazon</a>
               <Link href="/book?service=Life+After+Death+(Signed+Copy)&price=35" className="btn-ghost">Buy Signed Copy — $35</Link>
-            </div>
-          </div>
-
-          {/* Right hero image */}
-          <div style={{ width: '100%', minWidth: 0 }}>
-            <div style={{ position: 'relative', aspectRatio: '3/4', boxShadow: '0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(201,168,76,0.15)' }}>
-              <Image src="/images/book-hero.jpg" alt="Life After Death book surrounded by roses" fill style={{ objectFit: 'cover', borderRadius: 4 }} />
             </div>
           </div>
         </div>
