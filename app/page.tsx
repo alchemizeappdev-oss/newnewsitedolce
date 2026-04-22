@@ -211,7 +211,7 @@ export default function HomePage() {
 
       {/* BOOK SECTION */}
       <section id="book-section" style={{ padding: '120px 20px', background: 'var(--black2)', borderTop: '1px solid rgba(201,168,76,0.08)' }}>
-        <div style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 60, alignItems: 'center' }}>
           <div style={{ maxWidth: 340, margin: '0 auto' }}>
             <div style={{ position: 'relative', aspectRatio: '3/4', boxShadow: '0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(201,168,76,0.15)' }}>
               <Image src="/images/book-cover.png" alt="Life After Death by Star Monreal" fill style={{ objectFit: 'cover', borderRadius: 4 }} />
@@ -225,6 +225,11 @@ export default function HomePage() {
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
               <a href="https://www.amazon.com/dp/B0DFZZ3X5R" target="_blank" rel="noopener noreferrer" className="btn-primary">Order on Amazon</a>
               <Link href="/book?service=Life+After+Death+(Signed+Copy)&price=35" className="btn-ghost">Buy Signed Copy — $35</Link>
+            </div>
+          </div>
+          <div style={{ maxWidth: 380, margin: '0 auto' }}>
+            <div style={{ position: 'relative', aspectRatio: '3/4', boxShadow: '0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(201,168,76,0.15)' }}>
+              <Image src="/images/book-hero.jpg" alt="Life After Death book surrounded by roses" fill style={{ objectFit: 'cover', borderRadius: 4 }} />
             </div>
           </div>
         </div>
