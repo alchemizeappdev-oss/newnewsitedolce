@@ -211,13 +211,16 @@ export default function HomePage() {
 
       {/* BOOK SECTION */}
       <section id="book-section" style={{ padding: '120px 20px', background: 'var(--black2)', borderTop: '1px solid rgba(201,168,76,0.08)' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 60, alignItems: 'center' }}>
-          <div style={{ maxWidth: 340, margin: '0 auto' }}>
+        <div style={{ maxWidth: 1300, margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(280px, 320px) 1fr minmax(300px, 380px)', gap: 60, alignItems: 'center' }}>
+          {/* Left book cover */}
+          <div style={{ width: '100%', minWidth: 0 }}>
             <div style={{ position: 'relative', aspectRatio: '3/4', boxShadow: '0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(201,168,76,0.15)' }}>
               <Image src="/images/book-cover.png" alt="Life After Death by Star Monreal" fill style={{ objectFit: 'cover', borderRadius: 4 }} />
             </div>
           </div>
-          <div>
+
+          {/* Center text content */}
+          <div style={{ minWidth: 0 }}>
             <p className="section-label" style={{ textAlign: 'left' }}>The Book</p>
             <h2 className="gold-text section-title" style={{ textAlign: 'left' }}>Life After Death</h2>
             <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: '1.1rem', lineHeight: 1.85, color: '#D4C4A0', marginBottom: 16 }}>Star's memoir of the journey no one returns from — and why she did. After her fatal accident, she was guided by Archangel Michael into realms of light, love, and divine truth beyond anything earthly language can fully hold.</p>
@@ -227,7 +230,9 @@ export default function HomePage() {
               <Link href="/book?service=Life+After+Death+(Signed+Copy)&price=35" className="btn-ghost">Buy Signed Copy — $35</Link>
             </div>
           </div>
-          <div style={{ maxWidth: 380, margin: '0 auto' }}>
+
+          {/* Right hero image */}
+          <div style={{ width: '100%', minWidth: 0 }}>
             <div style={{ position: 'relative', aspectRatio: '3/4', boxShadow: '0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(201,168,76,0.15)' }}>
               <Image src="/images/book-hero.jpg" alt="Life After Death book surrounded by roses" fill style={{ objectFit: 'cover', borderRadius: 4 }} />
             </div>
