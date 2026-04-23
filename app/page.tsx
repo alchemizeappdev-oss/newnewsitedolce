@@ -188,14 +188,15 @@ export default function HomePage() {
       </nav>
 
       {/* ── HERO ── */}
-      <section id="hero" style={{ position: 'relative', minHeight: '100svh', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', overflow: 'hidden' }}>
-        <video
-          autoPlay loop muted playsInline
-          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
-        >
-          <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(8,8,8,0.52)', zIndex: 1 }} />
+      <section id="hero" style={{ position: 'relative', minHeight: '100svh', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', overflow: 'hidden', background: BLACK }}>
+        <Image
+          src="/images/dolce-vida-logo.png"
+          alt="Dolce Vida"
+          fill
+          priority
+          style={{ objectFit: 'contain', objectPosition: 'center', zIndex: 0, maxWidth: '100%' }}
+        />
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(8,8,8,0.18)', zIndex: 1 }} />
 
         <div style={{ position: 'relative', zIndex: 2, padding: `80px ${PX} 60px`, width: '100%', maxWidth: 680, margin: '0 auto' }}>
           <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.55rem,2.5vw,0.7rem)', letterSpacing: '0.3em', textTransform: 'uppercase', color: GOLD, marginBottom: 16, opacity: 0.85 }}>Reno, Nevada · Star Monreal</p>
@@ -294,12 +295,30 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* JR's story */}
-          <div style={{ maxWidth: 960, margin: '0 auto 48px' }}>
-            <div className="two-col-grid">
-              <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', boxShadow: '0 20px 60px rgba(0,0,0,0.6)', borderRadius: 4, overflow: 'hidden' }}>
-                <Image src="/images/jr-commander.jpg" alt="JR — Commander, Dolce Vida" fill style={{ objectFit: 'cover' }} />
+          {/* JR's story — video background */}
+          <div style={{ position: 'relative', maxWidth: 960, margin: '0 auto 48px', borderRadius: 8, overflow: 'hidden' }}>
+            {/* Video fills this container */}
+            <video
+              autoPlay loop muted playsInline
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
+            >
+              <source src="/videos/hero.mp4" type="video/mp4" />
+            </video>
+            {/* Dark overlay so text stays legible */}
+            <div style={{ position: 'absolute', inset: 0, background: 'rgba(8,8,8,0.62)', zIndex: 1 }} />
+            {/* Content sits above overlay */}
+            <div style={{ position: 'relative', zIndex: 2, padding: 'clamp(32px,6vw,64px)' }}>
+              <div style={{ marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10 }}>
+                <div style={{ width: 32, height: 1, background: `linear-gradient(to right,transparent,${GOLD})` }} />
+                <span style={{ fontFamily: HEAD_FONT, fontSize: '0.6rem', letterSpacing: '0.4em', textTransform: 'uppercase', color: GOLD }}>JR</span>
+                <div style={{ width: 32, height: 1, background: `linear-gradient(to left,transparent,${GOLD})` }} />
               </div>
+              <h3 style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(1.3rem,5vw,2rem)', letterSpacing: '0.06em', color: CREAM, marginBottom: 16, lineHeight: 1.3 }}>He was born<br />to protect it.</h3>
+              <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 14 }}>JR comes from a small town, but his story was never meant to stay small. Through his mother&apos;s bloodline, he carries the gifts of his grandfather — a medicine man, a shaman, a healer. The same energy lives in him.</p>
+              <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 14 }}>JR does not need cards to know what others are feeling. His intuition is immediate, powerful, undeniable. There was a woman preparing for surgery on her hand. After working with JR, she canceled the surgery completely.</p>
+              <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED }}>He is fearless. Wild. Drawn to the edge. The same man who can race toward danger is the man who can sit in silence and help someone find themselves again.</p>
+            </div>
+          </div>
               <div>
                 <div style={{ marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10 }}>
                   <div style={{ width: 32, height: 1, background: `linear-gradient(to right,transparent,${GOLD})` }} />
