@@ -20,7 +20,7 @@ const FAQS = [
   { q: 'How should I prepare for my session?', a: 'Come with an open heart and, ideally, a quiet mind. If you have specific questions or intentions, write them down beforehand. Avoid alcohol or heavy substances for 24 hours before a session. Arrival 10 minutes early is recommended for in-person visits.' },
   { q: 'What exactly happens during a hex removal?', a: "Star will first identify the nature and source of the energetic interference through intuitive assessment and spiritual tools. The removal involves a three-hour ceremonial process using sacred prayer, specific ritual materials, and Star's direct spiritual intervention. A protective sealing is completed at the end." },
   { q: 'How is hypnosis different from a reading?', a: 'Readings are intuitive -- Star receives information from the spiritual realm to guide and inform you. Hypnosis is clinical and directive -- it works directly on your subconscious mind to reprogram patterns, release trauma, and install new beliefs. Both are powerful but serve different needs.' },
-  { q: "Where can I get Star's book?", a: 'Life After Death is available on Amazon. You can also purchase a personally signed copy directly through this website. Signed copies include a handwritten note from Star and ship within 5–7 business days.' },
+  { q: "Where can I get Star's book?", a: 'Life After Death is available on Amazon. You can also purchase a personally signed copy directly through this website. Signed copies include a handwritten note from Star and ship within 5-7 business days.' },
 ]
 
 /* Shared inline style constants so values are DRY */
@@ -520,7 +520,7 @@ export default function HomePage() {
               <div>
                 <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.55rem,2.5vw,0.65rem)', letterSpacing: '0.28em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>Office Hours</p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                  {[['Mon – Fri', '10am – 6pm'], ['Saturday', 'By appointment'], ['Sunday', 'Closed']].map(([day, hours]) => (
+                  {[['Mon - Fri', '10am - 6pm'], ['Saturday', 'By appointment'], ['Sunday', 'Closed']].map(([day, hours]) => (
                     <div key={day} style={{ display: 'flex', justifyContent: 'space-between', gap: 16 }}>
                       <span style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.05rem)', color: CREAM_MUTED }}>{day}</span>
                       <span style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.05rem)', color: CREAM_MUTED, opacity: 0.7 }}>{hours}</span>
