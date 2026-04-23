@@ -194,7 +194,7 @@ export default function HomePage() {
           alt="Dolce Vida"
           fill
           priority
-          style={{ objectFit: 'contain', objectPosition: 'center', zIndex: 0, maxWidth: '100%' }}
+          style={{ objectFit: 'cover', objectPosition: 'center top', zIndex: 0 }}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(8,8,8,0.18)', zIndex: 1 }} />
 
