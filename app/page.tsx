@@ -52,7 +52,7 @@ export default function HomePage() {
 
   useEffect(() => {
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js').catch(() => {})
+      navigator.serviceWorker.register('/sw.js').catch(() => { })
     }
     const handler = (e: any) => {
       e.preventDefault()
@@ -319,243 +319,246 @@ export default function HomePage() {
               <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED }}>He is fearless. Wild. Drawn to the edge. The same man who can race toward danger is the man who can sit in silence and help someone find themselves again.</p>
             </div>
           </div>
-              <div>
-                <div style={{ marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <div style={{ width: 32, height: 1, background: `linear-gradient(to right,transparent,${GOLD})` }} />
-                  <span style={{ fontFamily: HEAD_FONT, fontSize: '0.6rem', letterSpacing: '0.4em', textTransform: 'uppercase', color: GOLD }}>JR</span>
-                  <div style={{ width: 32, height: 1, background: `linear-gradient(to left,transparent,${GOLD})` }} />
-                </div>
-                <h3 style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(1.3rem,5vw,2rem)', letterSpacing: '0.06em', color: CREAM, marginBottom: 16, lineHeight: 1.3 }}>He was born<br />to protect it.</h3>
-                <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 14 }}>JR comes from a small town, but his story was never meant to stay small. Through his mother&apos;s bloodline, he carries the gifts of his grandfather -- a medicine man, a shaman, a healer. The same energy lives in him.</p>
-                <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 14 }}>JR does not need cards to know what others are feeling. His intuition is immediate, powerful, undeniable. There was a woman preparing for surgery on her hand. After working with JR, she canceled the surgery completely.</p>
-                <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED }}>He is fearless. Wild. Drawn to the edge. The same man who can race toward danger is the man who can sit in silence and help someone find themselves again.</p>
-              </div>
+          <div>
+            <div style={{ marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10 }}>
+              <div style={{ width: 32, height: 1, background: `linear-gradient(to right,transparent,${GOLD})` }} />
+              <span style={{ fontFamily: HEAD_FONT, fontSize: '0.6rem', letterSpacing: '0.4em', textTransform: 'uppercase', color: GOLD }}>JR</span>
+              <div style={{ width: 32, height: 1, background: `linear-gradient(to left,transparent,${GOLD})` }} />
             </div>
-          </div>
-
-          {/* Belief pillars */}
-          <div style={{ maxWidth: 900, margin: '0 auto 48px' }}>
-            <p className="section-label" style={{ marginBottom: 28 }}>What We Believe</p>
-            <div className="auto-grid">
-              {[
-                { label: 'Energy', text: 'Your energy is not fixed. The blocks, the patterns, the heaviness you have been carrying can be released.' },
-                { label: 'Clarity', text: 'Clarity is your birthright. You deserve to know who you are, why you are here, and what has been standing in your way.' },
-                { label: 'Purpose', text: 'There are no accidents. If you found Dolce Vida, you were meant to. The sweet life begins when you stop carrying what was never yours.' },
-              ].map(({ label, text }) => (
-                <div key={label} style={{ padding: 'clamp(20px,4vw,28px) clamp(16px,3vw,24px)', background: 'rgba(8,8,8,0.75)', border: '1px solid rgba(255,255,255,0.06)' }}>
-                  <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.6rem,2.5vw,0.72rem)', letterSpacing: '0.25em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>{label}</p>
-                  <p style={{ fontFamily: BODY_FONT, fontStyle: 'italic', fontSize: 'clamp(1rem,3vw,1.05rem)', lineHeight: 1.75, color: CREAM_MUTED }}>{text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Stats */}
-          <div className="stats-row">
-            {[['500+', 'Clients guided'], ['5★', 'Google rating'], ['10+', 'Years of practice']].map(([num, label]) => (
-              <div key={label} style={{ textAlign: 'center', minWidth: 80 }}>
-                <p className="gold-text" style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(1.8rem,7vw,2.5rem)', fontWeight: 700, display: 'block' }}>{num}</p>
-                <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.55rem,2vw,0.65rem)', letterSpacing: '0.2em', textTransform: 'uppercase', color: CREAM_MUTED, opacity: 0.7, marginTop: 8 }}>{label}</p>
-              </div>
-            ))}
+            <h3 style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(1.3rem,5vw,2rem)', letterSpacing: '0.06em', color: CREAM, marginBottom: 16, lineHeight: 1.3 }}>He was born<br />to protect it.</h3>
+            <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 14 }}>JR comes from a small town, but his story was never meant to stay small. Through his mother&apos;s bloodline, he carries the gifts of his grandfather -- a medicine man, a shaman, a healer. The same energy lives in him.</p>
+            <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 14 }}>JR does not need cards to know what others are feeling. His intuition is immediate, powerful, undeniable. There was a woman preparing for surgery on her hand. After working with JR, she canceled the surgery completely.</p>
+            <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED }}>He is fearless. Wild. Drawn to the edge. The same man who can race toward danger is the man who can sit in silence and help someone find themselves again.</p>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* -- BOOK SECTION -- */}
-      <section id="book-section" style={{ padding: `${SECTION_PY} ${PX}`, background: BLACK2, borderTop: '1px solid rgba(201,168,76,0.08)' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div className="two-col-grid">
-            <div>
-              <p className="section-label" style={{ textAlign: 'left' }}>The Book</p>
-              <h2 className="gold-text section-title" style={{ textAlign: 'left' }}>Life After Death</h2>
-              <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.1rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 14 }}>
-                Star&apos;s memoir of the journey no one returns from -- and why she did. After her fatal accident, she was guided by Archangel Michael into realms of light, love, and divine truth beyond anything earthly language can fully hold.
-              </p>
-              <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.1rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 28, fontStyle: 'italic' }}>
-                <em>Life After Death</em> is a map for anyone who has lost someone, who fears death, or who senses there is more. It is proof, written in love.
-              </p>
-              {/* Buttons: full-width stacked column, no overflow */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                <a
-                  href="https://www.amazon.com/dp/B0DFZZ3X5R"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ background: 'linear-gradient(135deg,#8B6914,#C9A84C)', color: BLACK, fontFamily: HEAD_FONT, fontSize: 'clamp(0.65rem,2.5vw,0.75rem)', letterSpacing: '0.18em', textTransform: 'uppercase', padding: '18px 20px', textDecoration: 'none', fontWeight: 700, textAlign: 'center', display: 'block', wordBreak: 'break-word' }}
-                >
-                  Order on Amazon
-                </a>
-                <Link
-                  href="/book?service=Life+After+Death+(Signed+Copy)&price=35"
-                  style={{ border: '1px solid rgba(201,168,76,0.4)', color: CREAM, fontFamily: HEAD_FONT, fontSize: 'clamp(0.65rem,2.5vw,0.75rem)', letterSpacing: '0.18em', textTransform: 'uppercase', padding: '18px 20px', textDecoration: 'none', textAlign: 'center', display: 'block', wordBreak: 'break-word' }}
-                >
-                  Buy Signed Copy -- $35
-                </Link>
-              </div>
+      {/* Belief pillars */}
+      <div style={{ maxWidth: 900, margin: '0 auto 48px' }}>
+        <p className="section-label" style={{ marginBottom: 28 }}>What We Believe</p>
+        <div className="auto-grid">
+          {[
+            { label: 'Energy', text: 'Your energy is not fixed. The blocks, the patterns, the heaviness you have been carrying can be released.' },
+            { label: 'Clarity', text: 'Clarity is your birthright. You deserve to know who you are, why you are here, and what has been standing in your way.' },
+            { label: 'Purpose', text: 'There are no accidents. If you found Dolce Vida, you were meant to. The sweet life begins when you stop carrying what was never yours.' },
+          ].map(({ label, text }) => (
+            <div key={label} style={{ padding: 'clamp(20px,4vw,28px) clamp(16px,3vw,24px)', background: 'rgba(8,8,8,0.75)', border: '1px solid rgba(255,255,255,0.06)' }}>
+              <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.6rem,2.5vw,0.72rem)', letterSpacing: '0.25em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>{label}</p>
+              <p style={{ fontFamily: BODY_FONT, fontStyle: 'italic', fontSize: 'clamp(1rem,3vw,1.05rem)', lineHeight: 1.75, color: CREAM_MUTED }}>{text}</p>
             </div>
-            {/* 4/3 on mobile so it doesn't fill the whole viewport height */}
-            <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', boxShadow: '0 20px 60px rgba(0,0,0,0.6)', borderRadius: 4, overflow: 'hidden' }}>
-              <Image src="/images/book-hero.jpg" alt="Life After Death book surrounded by roses" fill style={{ objectFit: 'cover' }} />
-            </div>
-          </div>
+          ))}
         </div>
-      </section>
+      </div>
 
-      {/* -- TESTIMONIALS -- */}
-      <section id="testimonials" style={{ padding: `${SECTION_PY} ${PX}`, background: BLACK }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <p className="section-label">Client Voices</p>
-          <h2 className="gold-text section-title">What They Say</h2>
-          {/* auto-grid: 1 col on mobile, multi-col on tablet+ */}
-          <div className="auto-grid" style={{ marginTop: 40 }}>
-            {TESTIMONIALS.map(({ quote, author, location }) => (
-              <div key={author} style={{ background: BLACK2, padding: 'clamp(20px,4vw,32px) clamp(16px,4vw,24px)', border: '1px solid rgba(255,255,255,0.04)' }}>
-                <p style={{ color: GOLD, letterSpacing: '0.1em', marginBottom: 14, fontSize: '0.85rem' }}>★★★★★</p>
-                <p style={{ fontFamily: BODY_FONT, fontStyle: 'italic', fontSize: 'clamp(1rem,3vw,1.1rem)', lineHeight: 1.75, color: CREAM_MUTED, marginBottom: 18 }}>&ldquo;{quote}&rdquo;</p>
-                <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.6rem,2vw,0.7rem)', letterSpacing: '0.15em', textTransform: 'uppercase', color: CREAM }}>{author}</p>
-                <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.55rem,2vw,0.62rem)', letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, opacity: 0.7, marginTop: 4 }}>{location}</p>
+      {/* Stats */}
+      <div className="stats-row">
+        {[['500+', 'Clients guided'], ['5★', 'Google rating'], ['10+', 'Years of practice']].map(([num, label]) => (
+          <div key={label} style={{ textAlign: 'center', minWidth: 80 }}>
+            <p className="gold-text" style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(1.8rem,7vw,2.5rem)', fontWeight: 700, display: 'block' }}>{num}</p>
+            <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.55rem,2vw,0.65rem)', letterSpacing: '0.2em', textTransform: 'uppercase', color: CREAM_MUTED, opacity: 0.7, marginTop: 8 }}>{label}</p>
+          </div>
+        ))}
+      </div>
+    </div >
+      </section >
+
+    {/* -- BOOK SECTION -- */ }
+    < section id = "book-section" style = {{ padding: `${SECTION_PY} ${PX}`, background: BLACK2, borderTop: '1px solid rgba(201,168,76,0.08)' }
+}>
+  <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+    <div className="two-col-grid">
+      <div>
+        <p className="section-label" style={{ textAlign: 'left' }}>The Book</p>
+        <h2 className="gold-text section-title" style={{ textAlign: 'left' }}>Life After Death</h2>
+        <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.1rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 14 }}>
+          Star&apos;s memoir of the journey no one returns from -- and why she did. After her fatal accident, she was guided by Archangel Michael into realms of light, love, and divine truth beyond anything earthly language can fully hold.
+        </p>
+        <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.1rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 28, fontStyle: 'italic' }}>
+          <em>Life After Death</em> is a map for anyone who has lost someone, who fears death, or who senses there is more. It is proof, written in love.
+        </p>
+        {/* Buttons: full-width stacked column, no overflow */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <a
+            href="https://www.amazon.com/dp/B0DFZZ3X5R"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ background: 'linear-gradient(135deg,#8B6914,#C9A84C)', color: BLACK, fontFamily: HEAD_FONT, fontSize: 'clamp(0.65rem,2.5vw,0.75rem)', letterSpacing: '0.18em', textTransform: 'uppercase', padding: '18px 20px', textDecoration: 'none', fontWeight: 700, textAlign: 'center', display: 'block', wordBreak: 'break-word' }}
+          >
+            Order on Amazon
+          </a>
+          <Link
+            href="/book?service=Life+After+Death+(Signed+Copy)&price=35"
+            style={{ border: '1px solid rgba(201,168,76,0.4)', color: CREAM, fontFamily: HEAD_FONT, fontSize: 'clamp(0.65rem,2.5vw,0.75rem)', letterSpacing: '0.18em', textTransform: 'uppercase', padding: '18px 20px', textDecoration: 'none', textAlign: 'center', display: 'block', wordBreak: 'break-word' }}
+          >
+            Buy Signed Copy -- $35
+          </Link>
+        </div>
+      </div>
+      {/* 4/3 on mobile so it doesn't fill the whole viewport height */}
+      <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', boxShadow: '0 20px 60px rgba(0,0,0,0.6)', borderRadius: 4, overflow: 'hidden' }}>
+        <Image src="/images/book-hero.jpg" alt="Life After Death book surrounded by roses" fill style={{ objectFit: 'cover' }} />
+      </div>
+    </div>
+  </div>
+      </section >
+
+  {/* -- TESTIMONIALS -- */ }
+  < section id = "testimonials" style = {{ padding: `${SECTION_PY} ${PX}`, background: BLACK }}>
+    <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+      <p className="section-label">Client Voices</p>
+      <h2 className="gold-text section-title">What They Say</h2>
+      {/* auto-grid: 1 col on mobile, multi-col on tablet+ */}
+      <div className="auto-grid" style={{ marginTop: 40 }}>
+        {TESTIMONIALS.map(({ quote, author, location }) => (
+          <div key={author} style={{ background: BLACK2, padding: 'clamp(20px,4vw,32px) clamp(16px,4vw,24px)', border: '1px solid rgba(255,255,255,0.04)' }}>
+            <p style={{ color: GOLD, letterSpacing: '0.1em', marginBottom: 14, fontSize: '0.85rem' }}>★★★★★</p>
+            <p style={{ fontFamily: BODY_FONT, fontStyle: 'italic', fontSize: 'clamp(1rem,3vw,1.1rem)', lineHeight: 1.75, color: CREAM_MUTED, marginBottom: 18 }}>&ldquo;{quote}&rdquo;</p>
+            <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.6rem,2vw,0.7rem)', letterSpacing: '0.15em', textTransform: 'uppercase', color: CREAM }}>{author}</p>
+            <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.55rem,2vw,0.62rem)', letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, opacity: 0.7, marginTop: 4 }}>{location}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+      </section >
+
+  {/* -- FAQ -- */ }
+  < section id = "faq" style = {{ padding: `${SECTION_PY} ${PX}`, background: BLACK2 }}>
+    <div style={{ maxWidth: 760, margin: '0 auto' }}>
+      <p className="section-label">Questions</p>
+      <h2 className="gold-text section-title">Common Questions</h2>
+      <div style={{ marginTop: 40 }}>
+        {FAQS.map(({ q, a }, i) => (
+          <div key={i} style={{ borderBottom: '1px solid rgba(201,168,76,0.1)' }}>
+            <button
+              onClick={() => setOpenFaq(openFaq === i ? null : i)}
+              style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '20px 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', gap: 16, touchAction: 'manipulation' }}
+            >
+              <span style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.65rem,2.8vw,0.82rem)', letterSpacing: '0.05em', textTransform: 'uppercase', color: CREAM, lineHeight: 1.6, flex: 1 }}>{q}</span>
+              <span style={{ color: GOLD, fontSize: '1.3rem', flexShrink: 0, lineHeight: 1, marginTop: 2 }}>{openFaq === i ? '−' : '+'}</span>
+            </button>
+            {openFaq === i && (
+              <div style={{ paddingBottom: 20 }}>
+                <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.05rem)', lineHeight: 1.8, color: CREAM_MUTED }}>{a}</p>
               </div>
-            ))}
+            )}
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+      </section >
 
-      {/* -- FAQ -- */}
-      <section id="faq" style={{ padding: `${SECTION_PY} ${PX}`, background: BLACK2 }}>
-        <div style={{ maxWidth: 760, margin: '0 auto' }}>
-          <p className="section-label">Questions</p>
-          <h2 className="gold-text section-title">Common Questions</h2>
-          <div style={{ marginTop: 40 }}>
-            {FAQS.map(({ q, a }, i) => (
-              <div key={i} style={{ borderBottom: '1px solid rgba(201,168,76,0.1)' }}>
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '20px 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', gap: 16, touchAction: 'manipulation' }}
-                >
-                  <span style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.65rem,2.8vw,0.82rem)', letterSpacing: '0.05em', textTransform: 'uppercase', color: CREAM, lineHeight: 1.6, flex: 1 }}>{q}</span>
-                  <span style={{ color: GOLD, fontSize: '1.3rem', flexShrink: 0, lineHeight: 1, marginTop: 2 }}>{openFaq === i ? '−' : '+'}</span>
-                </button>
-                {openFaq === i && (
-                  <div style={{ paddingBottom: 20 }}>
-                    <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.05rem)', lineHeight: 1.8, color: CREAM_MUTED }}>{a}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* -- INNER CIRCLE -- */}
-      <section id="inner-circle" style={{
-        padding: `${SECTION_PY} ${PX}`,
-        borderTop: '1px solid rgba(201,168,76,0.08)',
-        position: 'relative',
+  {/* -- INNER CIRCLE -- */ }
+  < section id = "inner-circle" style = {{
+  padding: `${SECTION_PY} ${PX}`,
+    borderTop: '1px solid rgba(201,168,76,0.08)',
+      position: 'relative',
         backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Apr%2019%2C%202026%2C%2010_03_46%20PM-BPzzECOH2TDIMHFRWb6EQWxfYW1et6.png')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center top',
-        backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+            backgroundPosition: 'center top',
+              backgroundRepeat: 'no-repeat',
       }}>
-        {/* Dark overlay keeps text legible without washing out the image */}
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(8,8,8,0.58)', zIndex: 0 }} />
-        <div style={{ maxWidth: 540, margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
+  {/* Dark overlay keeps text legible without washing out the image */ }
+  < div style = {{ position: 'absolute', inset: 0, background: 'rgba(8,8,8,0.58)', zIndex: 0 }} />
+    < div style = {{ maxWidth: 540, margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <p className="section-label">The Inner Circle</p>
           <h2 className="gold-text section-title">Enter the Inner Circle</h2>
           <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3.5vw,1.1rem)', lineHeight: 1.8, color: CREAM_MUTED, marginBottom: 32 }}>
             Receive Star&apos;s new moon messages, exclusive spiritual guidance, first access to new offerings, and transmissions that never go public.
           </p>
-          {icDone ? (
-            <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.7rem,3vw,0.85rem)', letterSpacing: '0.25em', textTransform: 'uppercase', color: GOLD }}>Welcome to the circle</p>
-          ) : (
-            <form onSubmit={e => { e.preventDefault(); setIcDone(true) }} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              <input
-                type="text"
-                placeholder="Your name"
-                required
-                value={icName}
-                onChange={e => setIcName(e.target.value)}
-                style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(201,168,76,0.2)', color: CREAM, fontFamily: BODY_FONT, fontSize: 'clamp(1rem,4vw,1.05rem)', padding: '16px', outline: 'none', width: '100%', borderRadius: 0, WebkitAppearance: 'none' }}
-              />
-              <input
-                type="email"
-                placeholder="Your email"
-                required
-                value={icEmail}
-                onChange={e => setIcEmail(e.target.value)}
-                style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(201,168,76,0.2)', color: CREAM, fontFamily: BODY_FONT, fontSize: 'clamp(1rem,4vw,1.05rem)', padding: '16px', outline: 'none', width: '100%', borderRadius: 0, WebkitAppearance: 'none' }}
-              />
-              <button
-                type="submit"
-                style={{ background: 'linear-gradient(135deg,#8B6914,#C9A84C)', border: 'none', color: BLACK, fontFamily: HEAD_FONT, fontSize: 'clamp(0.65rem,3vw,0.78rem)', letterSpacing: '0.2em', textTransform: 'uppercase', padding: '18px', cursor: 'pointer', fontWeight: 700, width: '100%', touchAction: 'manipulation' }}
-              >
-                Enter the Inner Circle
-              </button>
-              <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(0.85rem,3vw,0.95rem)', fontStyle: 'italic', color: CREAM_MUTED, opacity: 0.5 }}>Sacred space. No spam, ever. Unsubscribe anytime.</p>
-            </form>
-          )}
-        </div>
-      </section>
+{
+  icDone ? (
+    <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.7rem,3vw,0.85rem)', letterSpacing: '0.25em', textTransform: 'uppercase', color: GOLD }}>Welcome to the circle</p>
+  ) : (
+    <form onSubmit={e => { e.preventDefault(); setIcDone(true) }} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <input
+        type="text"
+        placeholder="Your name"
+        required
+        value={icName}
+        onChange={e => setIcName(e.target.value)}
+        style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(201,168,76,0.2)', color: CREAM, fontFamily: BODY_FONT, fontSize: 'clamp(1rem,4vw,1.05rem)', padding: '16px', outline: 'none', width: '100%', borderRadius: 0, WebkitAppearance: 'none' }}
+      />
+      <input
+        type="email"
+        placeholder="Your email"
+        required
+        value={icEmail}
+        onChange={e => setIcEmail(e.target.value)}
+        style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(201,168,76,0.2)', color: CREAM, fontFamily: BODY_FONT, fontSize: 'clamp(1rem,4vw,1.05rem)', padding: '16px', outline: 'none', width: '100%', borderRadius: 0, WebkitAppearance: 'none' }}
+      />
+      <button
+        type="submit"
+        style={{ background: 'linear-gradient(135deg,#8B6914,#C9A84C)', border: 'none', color: BLACK, fontFamily: HEAD_FONT, fontSize: 'clamp(0.65rem,3vw,0.78rem)', letterSpacing: '0.2em', textTransform: 'uppercase', padding: '18px', cursor: 'pointer', fontWeight: 700, width: '100%', touchAction: 'manipulation' }}
+      >
+        Enter the Inner Circle
+      </button>
+      <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(0.85rem,3vw,0.95rem)', fontStyle: 'italic', color: CREAM_MUTED, opacity: 0.5 }}>Sacred space. No spam, ever. Unsubscribe anytime.</p>
+    </form>
+  )
+}
+        </div >
+      </section >
 
-      {/* -- CONTACT -- */}
-      <section id="contact" style={{ padding: `${SECTION_PY} ${PX}`, background: BLACK2 }}>
-        <div style={{ maxWidth: 960, margin: '0 auto' }}>
-          <p className="section-label">Find Us</p>
-          <h2 className="gold-text section-title">Come to Us</h2>
-          <div className="two-col-grid" style={{ marginTop: 40, alignItems: 'start' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
-              {[
-                { label: 'Address', value: '351 S. Wells Ave, Suite 200\nReno, Nevada 89502', href: undefined },
-                { label: 'Phone', value: '775-400-9649', href: 'tel:7754009649' },
-                { label: 'Email', value: 'info@dolcevida.pink', href: 'mailto:info@dolcevida.pink' },
-              ].map(({ label, value, href }) => (
-                <div key={label}>
-                  <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.55rem,2.5vw,0.65rem)', letterSpacing: '0.28em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>{label}</p>
-                  {href ? (
-                    <a href={href} style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3.5vw,1.15rem)', color: CREAM, textDecoration: 'none', wordBreak: 'break-all' }}>{value}</a>
-                  ) : (
-                    <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3.5vw,1.15rem)', color: CREAM, whiteSpace: 'pre-line' }}>{value}</p>
-                  )}
+  {/* -- CONTACT -- */ }
+  < section id = "contact" style = {{ padding: `${SECTION_PY} ${PX}`, background: BLACK2 }}>
+    <div style={{ maxWidth: 960, margin: '0 auto' }}>
+      <p className="section-label">Find Us</p>
+      <h2 className="gold-text section-title">Come to Us</h2>
+      <div className="two-col-grid" style={{ marginTop: 40, alignItems: 'start' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
+          {[
+            { label: 'Address', value: '351 S. Wells Ave, Suite 200\nReno, Nevada 89502', href: undefined },
+            { label: 'Phone', value: '775-400-9649', href: 'tel:7754009649' },
+            { label: 'Email', value: 'info@dolcevida.pink', href: 'mailto:info@dolcevida.pink' },
+          ].map(({ label, value, href }) => (
+            <div key={label}>
+              <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.55rem,2.5vw,0.65rem)', letterSpacing: '0.28em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>{label}</p>
+              {href ? (
+                <a href={href} style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3.5vw,1.15rem)', color: CREAM, textDecoration: 'none', wordBreak: 'break-all' }}>{value}</a>
+              ) : (
+                <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3.5vw,1.15rem)', color: CREAM, whiteSpace: 'pre-line' }}>{value}</p>
+              )}
+            </div>
+          ))}
+          <div>
+            <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.55rem,2.5vw,0.65rem)', letterSpacing: '0.28em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>Office Hours</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {[['Mon - Fri', '10am - 6pm'], ['Saturday', 'By appointment'], ['Sunday', 'Closed']].map(([day, hours]) => (
+                <div key={day} style={{ display: 'flex', justifyContent: 'space-between', gap: 16 }}>
+                  <span style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.05rem)', color: CREAM_MUTED }}>{day}</span>
+                  <span style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.05rem)', color: CREAM_MUTED, opacity: 0.7 }}>{hours}</span>
                 </div>
               ))}
-              <div>
-                <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.55rem,2.5vw,0.65rem)', letterSpacing: '0.28em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>Office Hours</p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                  {[['Mon - Fri', '10am - 6pm'], ['Saturday', 'By appointment'], ['Sunday', 'Closed']].map(([day, hours]) => (
-                    <div key={day} style={{ display: 'flex', justifyContent: 'space-between', gap: 16 }}>
-                      <span style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.05rem)', color: CREAM_MUTED }}>{day}</span>
-                      <span style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.05rem)', color: CREAM_MUTED, opacity: 0.7 }}>{hours}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Location card */}
-            <div style={{ background: BLACK, border: '1px solid rgba(201,168,76,0.1)', padding: 'clamp(28px,6vw,48px) clamp(20px,4vw,32px)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', gap: 12 }}>
-              <span style={{ fontSize: 'clamp(1.8rem,6vw,2.5rem)', color: GOLD, opacity: 0.3 }}>✦</span>
-              <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.65rem,2.5vw,0.78rem)', letterSpacing: '0.2em', textTransform: 'uppercase', color: CREAM_MUTED }}>Reno, Nevada</p>
-              <p style={{ fontFamily: BODY_FONT, fontStyle: 'italic', fontSize: 'clamp(0.95rem,3vw,1.05rem)', color: CREAM_MUTED, opacity: 0.5 }}>351 S. Wells Ave, Suite 200</p>
-              <a
-                href="https://maps.google.com/?q=351+S+Wells+Ave+Suite+200+Reno+NV"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ marginTop: 8, fontFamily: HEAD_FONT, fontSize: 'clamp(0.6rem,2.5vw,0.68rem)', letterSpacing: '0.2em', textTransform: 'uppercase', color: GOLD, textDecoration: 'none', borderBottom: '1px solid rgba(201,168,76,0.3)', paddingBottom: 2 }}
-              >
-                Get Directions
-              </a>
-              <Link
-                href="/book"
-                style={{ marginTop: 12, background: 'linear-gradient(135deg,#8B6914,#C9A84C)', color: BLACK, fontFamily: HEAD_FONT, fontSize: 'clamp(0.6rem,2.5vw,0.7rem)', letterSpacing: '0.2em', textTransform: 'uppercase', padding: '16px 24px', textDecoration: 'none', fontWeight: 700, display: 'block', width: '100%', textAlign: 'center', wordBreak: 'break-word' }}
-              >
-                Book a Session
-              </Link>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* -- FOOTER -- */}
-      <footer className="footer-safe" style={{ background: BLACK, borderTop: '1px solid rgba(201,168,76,0.1)', padding: `clamp(36px,6vw,48px) ${PX}`, paddingBottom: 'max(28px, env(safe-area-inset-bottom, 28px))', textAlign: 'center' }}>
+        {/* Location card */}
+        <div style={{ background: BLACK, border: '1px solid rgba(201,168,76,0.1)', padding: 'clamp(28px,6vw,48px) clamp(20px,4vw,32px)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', gap: 12 }}>
+          <span style={{ fontSize: 'clamp(1.8rem,6vw,2.5rem)', color: GOLD, opacity: 0.3 }}>✦</span>
+          <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.65rem,2.5vw,0.78rem)', letterSpacing: '0.2em', textTransform: 'uppercase', color: CREAM_MUTED }}>Reno, Nevada</p>
+          <p style={{ fontFamily: BODY_FONT, fontStyle: 'italic', fontSize: 'clamp(0.95rem,3vw,1.05rem)', color: CREAM_MUTED, opacity: 0.5 }}>351 S. Wells Ave, Suite 200</p>
+          <a
+            href="https://maps.google.com/?q=351+S+Wells+Ave+Suite+200+Reno+NV"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ marginTop: 8, fontFamily: HEAD_FONT, fontSize: 'clamp(0.6rem,2.5vw,0.68rem)', letterSpacing: '0.2em', textTransform: 'uppercase', color: GOLD, textDecoration: 'none', borderBottom: '1px solid rgba(201,168,76,0.3)', paddingBottom: 2 }}
+          >
+            Get Directions
+          </a>
+          <Link
+            href="/book"
+            style={{ marginTop: 12, background: 'linear-gradient(135deg,#8B6914,#C9A84C)', color: BLACK, fontFamily: HEAD_FONT, fontSize: 'clamp(0.6rem,2.5vw,0.7rem)', letterSpacing: '0.2em', textTransform: 'uppercase', padding: '16px 24px', textDecoration: 'none', fontWeight: 700, display: 'block', width: '100%', textAlign: 'center', wordBreak: 'break-word' }}
+          >
+            Book a Session
+          </Link>
+        </div>
+      </div>
+    </div>
+      </section >
+
+  {/* -- FOOTER -- */ }
+  < footer className = "footer-safe" style = {{ background: BLACK, borderTop: '1px solid rgba(201,168,76,0.1)', padding: `clamp(36px,6vw,48px) ${PX}`, paddingBottom: 'max(28px, env(safe-area-inset-bottom, 28px))', textAlign: 'center' }}>
         <p className="gold-text" style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: 'clamp(1rem,5vw,1.4rem)', fontWeight: 700, letterSpacing: '0.1em', marginBottom: 10 }}>Dolce Vida</p>
         <p style={{ fontFamily: BODY_FONT, fontStyle: 'italic', fontSize: 'clamp(0.95rem,3vw,1rem)', color: CREAM_MUTED, marginBottom: 20 }}>Change your energy. Transform your life.</p>
         <nav className="footer-nav" style={{ marginBottom: 20 }}>
@@ -564,7 +567,7 @@ export default function HomePage() {
           ))}
         </nav>
         <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(0.8rem,3vw,0.88rem)', color: CREAM_MUTED, opacity: 0.3 }}>© 2026 Dolce Vida · Star Monreal · Reno, NV</p>
-      </footer>
+      </footer >
     </>
   )
 }
