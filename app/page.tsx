@@ -284,6 +284,9 @@ export default function HomePage() {
           <div className="two-col-grid" style={{ marginBottom: 48 }}>
             <div>
               <p className="section-label" style={{ textAlign: 'left' }}>Star Monreal</p>
+              <div style={{ position: 'relative', width: '100%', aspectRatio: '9/12', marginBottom: 24, borderRadius: 4, overflow: 'hidden', boxSizing: 'border-box' }}>
+                <Image src="/images/star-transmission.jpg" alt="Star Monreal" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+              </div>
               <h3 style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(1.3rem,5vw,2rem)', letterSpacing: '0.06em', marginBottom: 16, color: CREAM, lineHeight: 1.3 }}>She came back<br />with a transmission.</h3>
               <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 14 }}>She stood beyond the veil -- not in darkness, not in fear -- in a peace so complete it erased every question she had ever carried. In a love so vast it made every wound, every heartbreak, every year of feeling lost suddenly make sense.</p>
               <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 14 }}>In the presence of the Creator and <strong style={{ color: CREAM }}>Archangel Michael</strong>, she was shown what most people spend their entire lives searching for: truth, purpose, and the real reason the soul chooses to come here. And then she came back.</p>
