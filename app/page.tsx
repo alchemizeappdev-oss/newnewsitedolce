@@ -439,11 +439,10 @@ export default function HomePage() {
         padding: `${SECTION_PY} ${PX}`,
         borderTop: '1px solid rgba(201,168,76,0.08)',
         position: 'relative',
-        backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Apr%2019%2C%202026%2C%2010_03_46%20PM-BPzzECOH2TDIMHFRWb6EQWxfYW1et6.png')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center top',
-        backgroundRepeat: 'no-repeat',
+        background: BLACK,
       }}>
+        {/* Background image positioned next to content */}
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Apr%2019%2C%202026%2C%2010_03_46%20PM-BPzzECOH2TDIMHFRWb6EQWxfYW1et6.png')`, backgroundSize: 'contain', backgroundPosition: 'right center', backgroundRepeat: 'no-repeat', zIndex: 0 }} />
         {/* Dark overlay keeps text legible without washing out the image */}
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(8,8,8,0.58)', zIndex: 0 }} />
         <div style={{ maxWidth: 540, margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
