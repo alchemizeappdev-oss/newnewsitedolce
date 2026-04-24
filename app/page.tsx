@@ -296,11 +296,11 @@ export default function HomePage() {
           </div>
 
           {/* JR's story -- video background */}
-          <div style={{ position: 'relative', maxWidth: 960, margin: '0 auto 48px', borderRadius: 8, overflow: 'hidden' }}>
+          <div style={{ position: 'relative', width: '100%', maxWidth: 960, margin: '0 auto 48px', borderRadius: 8, overflow: 'hidden', boxSizing: 'border-box' }}>
             {/* Video fills this container */}
             <video
               autoPlay loop muted playsInline
-              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', zIndex: 0 }}
             >
               <source src="/videos/hero.mp4" type="video/mp4" />
             </video>
@@ -317,7 +317,7 @@ export default function HomePage() {
               <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 14 }}>JR comes from a small town, but his story was never meant to stay small. Through his mother&apos;s bloodline, he carries the gifts of his grandfather -- a medicine man, a shaman, a healer. The same energy lives in him.</p>
               <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 14 }}>JR does not need cards to know what others are feeling. His intuition is immediate, powerful, undeniable. There was a woman preparing for surgery on her hand. After working with JR, she canceled the surgery completely.</p>
               <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED }}>He is fearless. Wild. Drawn to the edge. The same man who can race toward danger is the man who can sit in silence and help someone find themselves again.</p>
-              <div style={{ position: 'relative', width: '100%', aspectRatio: '3/4', marginTop: 28, borderRadius: 4, overflow: 'hidden', boxShadow: '0 12px 40px rgba(0,0,0,0.5)' }}>
+              <div style={{ position: 'relative', width: '100%', aspectRatio: '3/4', marginTop: 28, borderRadius: 4, overflow: 'hidden', boxShadow: '0 12px 40px rgba(0,0,0,0.5)', boxSizing: 'border-box' }}>
                 <Image src="/images/jr-photo.jpg" alt="JR standing in front of a mosaic mural" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
               </div>
             </div>
@@ -382,8 +382,8 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-            <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', boxShadow: '0 20px 60px rgba(0,0,0,0.6)', borderRadius: 4, overflow: 'hidden' }}>
-              <Image src="/images/book-hero.jpg" alt="Life After Death book surrounded by roses" fill style={{ objectFit: 'cover' }} />
+            <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', boxShadow: '0 20px 60px rgba(0,0,0,0.6)', borderRadius: 4, overflow: 'hidden', boxSizing: 'border-box' }}>
+              <Image src="/images/book-hero.jpg" alt="Life After Death book surrounded by roses" fill style={{ objectFit: 'cover', objectPosition: 'center' }} />
             </div>
           </div>
         </div>
