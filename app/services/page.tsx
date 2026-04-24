@@ -5,9 +5,10 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
 const SERVICES = [
-  { cat: 'reading', name: '15-Minute Reading', meta: '15 minutes', price: 45, desc: 'A precise intuitive reading for a single question or focused area of life. Clear, fast, direct.' },
-  { cat: 'reading', name: '30-Minute Reading', meta: '30 minutes', price: 85, desc: 'Deeper insight into relationships, career, health, or spiritual path. Room to breathe and explore.' },
-  { cat: 'reading', name: '60-Minute Reading', meta: '60 minutes', price: 150, desc: 'A full intuitive session. Life path, loved ones, guides, blocks, and practical next steps — all illuminated.' },
+  { cat: 'reading', name: '15-Minute Reading', meta: '15 minutes', price: 75, desc: 'A precise intuitive reading for a single question or focused area of life. Clear, fast, direct.' },
+  { cat: 'reading', name: '30-Minute Reading', meta: '30 minutes', price: 100, desc: 'Deeper insight into relationships, career, health, or spiritual path. Room to breathe and explore.' },
+  { cat: 'reading', name: '60-Minute Reading', meta: '60 minutes', price: 200, desc: 'A full intuitive session. Life path, loved ones, guides, blocks, and practical next steps — all illuminated.' },
+  { cat: 'reading', name: '90-Minute Reading', meta: '1 hr 30 min', price: 260, desc: 'The deepest single-session reading available. Space for multiple areas of life, extended spirit contact, and full energetic assessment.' },
   { cat: 'reading', name: 'Couples Reading', meta: '45 minutes', price: 120, desc: 'Clarity for two — relationship dynamics, energy alignment, and the path forward together.' },
   { cat: 'reading', name: 'Pet Reading', meta: '30 minutes', price: 65, desc: "Connect with your animal companion's energy and receive messages from pets who have passed." },
   { cat: 'ritual', name: 'Fire Cleanse', meta: '4 hours', price: 1200, desc: 'A powerful full-body energetic purification using sacred fire ceremony. Deep release of stagnant energy, trauma, and spiritual debris.' },
