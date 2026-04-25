@@ -5,9 +5,10 @@ import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 
 const SERVICES = [
-  { cat: 'reading', name: '15-Minute Reading', meta: '15 min', price: 45 },
-  { cat: 'reading', name: '30-Minute Reading', meta: '30 min', price: 85 },
-  { cat: 'reading', name: '60-Minute Reading', meta: '60 min', price: 150 },
+  { cat: 'reading', name: '15-Minute Reading', meta: '15 min', price: 75 },
+  { cat: 'reading', name: '30-Minute Reading', meta: '30 min', price: 100 },
+  { cat: 'reading', name: '60-Minute Reading', meta: '60 min', price: 200 },
+  { cat: 'reading', name: '90-Minute Reading', meta: '1 hr 30 min', price: 260 },
   { cat: 'reading', name: 'Couples Reading', meta: '45 min', price: 120 },
   { cat: 'reading', name: 'Pet Reading', meta: '30 min', price: 65 },
   { cat: 'ritual', name: 'Fire Cleanse', meta: '4 hrs', price: 1200 },
