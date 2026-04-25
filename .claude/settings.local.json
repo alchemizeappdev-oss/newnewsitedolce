@@ -8,6 +8,7 @@
       "Skill(update-config)",
       "Skill(update-config:*)",
       "Bash(*)",
+      "PowerShell(*)",
       "Read",
       "Write",
       "Edit",
