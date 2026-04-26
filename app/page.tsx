@@ -118,12 +118,12 @@ export default function HomePage() {
           >
             ✕
           </button>
-          {[['About', '#about'], ['Services', '/services'], ['The Book', '#book-section'], ['Reviews', '#testimonials'], ['Contact', '#contact']].map(([label, href]) => (
+          {[['About', '#about'], ['Services', '/services'], ['Shop', '/shop'], ['The Book', '#book-section'], ['Reviews', '#testimonials'], ['Contact', '#contact']].map(([label, href]) => (
             <a
               key={label}
               href={href}
               onClick={() => setMobileOpen(false)}
-              style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(1rem, 5vw, 1.3rem)', letterSpacing: '0.2em', textTransform: 'uppercase', color: CREAM, textDecoration: 'none', touchAction: 'manipulation' }}
+              style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(1rem, 5vw, 1.3rem)', letterSpacing: '0.2em', textTransform: 'uppercase', color: label === 'Shop' ? GOLD : CREAM, textDecoration: 'none', touchAction: 'manipulation' }}
             >
               {label}
             </a>
@@ -154,7 +154,7 @@ export default function HomePage() {
       )}
 
       {/* -- NAVBAR -- */}
-      <nav style={{
+      <nav className={scrolled ? 'scrolled' : ''} style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         padding: `${scrolled ? '10px' : '14px'} ${PX}`,
@@ -168,18 +168,18 @@ export default function HomePage() {
       }}>
         <a href="#hero" className="gold-text" style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: 'clamp(0.85rem,4vw,1.3rem)', fontWeight: 700, letterSpacing: '0.1em', textDecoration: 'none', flexShrink: 0 }}>Dolce Vida</a>
 
-        <ul className="nav-desktop" style={{ display: 'none', gap: 28, listStyle: 'none', flex: 1, justifyContent: 'center' }}>
-          {[['About', '#about'], ['Services', '/services'], ['The Book', '#book-section'], ['Reviews', '#testimonials'], ['Contact', '#contact']].map(([label, href]) => (
+        <ul className="hidden md:flex" style={{ gap: 28, listStyle: 'none', flex: 1, justifyContent: 'center', alignItems: 'center', margin: 0, padding: 0 }}>
+          {[['About', '#about'], ['Services', '/services'], ['Shop', '/shop'], ['The Book', '#book-section'], ['Reviews', '#testimonials'], ['Contact', '#contact']].map(([label, href]) => (
             <li key={label}>
-              <a href={href} style={{ fontFamily: HEAD_FONT, fontSize: '0.65rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: CREAM_MUTED, textDecoration: 'none' }}>{label}</a>
+              <a href={href} className={`nav-link${label === 'Shop' ? ' nav-link-gold' : ''}`}>{label}</a>
             </li>
           ))}
         </ul>
-        <Link href="/book" className="book-now-desktop" style={{ padding: '11px 22px', fontSize: '0.62rem', fontFamily: HEAD_FONT, letterSpacing: '0.2em', textTransform: 'uppercase', background: 'linear-gradient(135deg,#8B6914,#C9A84C)', color: BLACK, textDecoration: 'none', fontWeight: 700, flexShrink: 0 }}>Book Now</Link>
+        <Link href="/book" className="hidden md:inline-block" style={{ padding: '11px 22px', fontSize: '0.62rem', fontFamily: HEAD_FONT, letterSpacing: '0.2em', textTransform: 'uppercase', background: 'linear-gradient(135deg,#8B6914,#C9A84C)', color: BLACK, textDecoration: 'none', fontWeight: 700, flexShrink: 0, whiteSpace: 'nowrap' }}>Book Now</Link>
 
         <button
           onClick={() => setMobileOpen(true)}
-          className="mobile-menu-btn"
+          className="flex md:hidden"
           style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 8, flexDirection: 'column', gap: 5, touchAction: 'manipulation' }}
           aria-label="Open menu"
         >
@@ -198,31 +198,29 @@ export default function HomePage() {
         />
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(8,8,8,0.18)', zIndex: 1 }} />
 
-        <div style={{ position: 'relative', zIndex: 2, padding: `80px ${PX} 60px`, width: '100%', maxWidth: 680, margin: '0 auto' }}>
-          <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.55rem,2.5vw,0.7rem)', letterSpacing: '0.3em', textTransform: 'uppercase', color: GOLD, marginBottom: 16, opacity: 0.85 }}>Reno, Nevada · Star Monreal</p>
-          <h1 className="gold-text" style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(3rem,16vw,8rem)', fontWeight: 700, letterSpacing: '0.08em', lineHeight: 1, marginBottom: 20 }}>Dolce<br />Vida</h1>
-          <p style={{ fontFamily: BODY_FONT, fontStyle: 'italic', fontSize: 'clamp(1.05rem,4.5vw,1.5rem)', color: CREAM_MUTED, marginBottom: 36, lineHeight: 1.5 }}>
+        <div style={{ position: 'relative', zIndex: 2, padding: `clamp(100px,18vw,140px) ${PX} clamp(48px,8vw,80px)`, width: '100%', maxWidth: 640, margin: '0 auto', textAlign: 'center' }}>
+          <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.52rem,2.2vw,0.7rem)', letterSpacing: '0.3em', textTransform: 'uppercase', color: GOLD, marginBottom: 14, opacity: 0.85 }}>Reno, Nevada · Star Monreal</p>
+          <h1 className="gold-text" style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(2.4rem,13vw,7rem)', fontWeight: 700, letterSpacing: '0.08em', lineHeight: 1, marginBottom: 18 }}>Dolce<br />Vida</h1>
+          <p style={{ fontFamily: BODY_FONT, fontStyle: 'italic', fontSize: 'clamp(1rem,4vw,1.35rem)', color: CREAM_MUTED, marginBottom: 32, lineHeight: 1.55 }}>
             Change your energy.<br /><em>Transform your life.</em>
           </p>
-          {/* Buttons stack vertically, full width, capped at 340px */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12, alignItems: 'center', width: '100%' }}>
             <Link
-              href="/book?service=30-Minute+Reading&price=85"
+              href="/book?service=30-Minute+Reading&price=100"
               style={{
                 background: 'linear-gradient(135deg,#8B6914,#C9A84C)',
                 color: BLACK,
                 fontFamily: HEAD_FONT,
-                fontSize: 'clamp(0.65rem,3vw,0.8rem)',
+                fontSize: 'clamp(0.62rem,2.8vw,0.78rem)',
                 letterSpacing: '0.2em',
                 textTransform: 'uppercase',
                 padding: '18px 24px',
                 textDecoration: 'none',
                 fontWeight: 700,
                 width: '100%',
-                maxWidth: 340,
+                maxWidth: 320,
                 textAlign: 'center',
                 display: 'block',
-                wordBreak: 'break-word',
               }}
             >
               Book a 30 Min Reading
@@ -233,16 +231,15 @@ export default function HomePage() {
                 border: '1px solid rgba(201,168,76,0.4)',
                 color: CREAM,
                 fontFamily: HEAD_FONT,
-                fontSize: 'clamp(0.65rem,3vw,0.8rem)',
+                fontSize: 'clamp(0.62rem,2.8vw,0.78rem)',
                 letterSpacing: '0.2em',
                 textTransform: 'uppercase',
                 padding: '18px 24px',
                 textDecoration: 'none',
                 width: '100%',
-                maxWidth: 340,
+                maxWidth: 320,
                 textAlign: 'center',
                 display: 'block',
-                wordBreak: 'break-word',
               }}
             >
               Our Story
@@ -284,7 +281,7 @@ export default function HomePage() {
           <div className="two-col-grid" style={{ marginBottom: 48 }}>
             <div>
               <p className="section-label" style={{ textAlign: 'left' }}>Star Monreal</p>
-              <div style={{ position: 'relative', width: '100%', aspectRatio: '9/12', marginBottom: 24, borderRadius: 4, overflow: 'hidden', boxSizing: 'border-box' }}>
+              <div style={{ position: 'relative', width: '100%', aspectRatio: '3/4', marginBottom: 24, borderRadius: 4, overflow: 'hidden', boxSizing: 'border-box' }}>
                 <Image src="/images/star-transmission.jpg" alt="Star Monreal" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
               </div>
               <h3 style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(1.3rem,5vw,2rem)', letterSpacing: '0.06em', marginBottom: 16, color: CREAM, lineHeight: 1.3 }}>She came back<br />with a transmission.</h3>
@@ -292,9 +289,8 @@ export default function HomePage() {
               <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED, marginBottom: 14 }}>In the presence of the Creator and <strong style={{ color: CREAM }}>Archangel Michael</strong>, she was shown what most people spend their entire lives searching for: truth, purpose, and the real reason the soul chooses to come here. And then she came back.</p>
               <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.15rem)', lineHeight: 1.85, color: CREAM_MUTED }}>Waking up was not a relief. It was a reckoning. She returned knowing that people are living far beneath their power. That spirits are exhausted, energy is blocked, and people have forgotten who they really are. <strong style={{ color: CREAM }}>That is why Dolce Vida was born.</strong></p>
             </div>
-            {/* Image: 4/3 on mobile (less tall), 16/9 on desktop */}
-            <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', boxShadow: '0 20px 60px rgba(0,0,0,0.6)', borderRadius: 4, overflow: 'hidden' }}>
-              <Image src="/images/dolce-vida-portal.jpg" alt="Star opening the Dolce Vida portal" fill style={{ objectFit: 'cover' }} />
+            <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3', boxShadow: '0 20px 60px rgba(0,0,0,0.6)', borderRadius: 4, overflow: 'hidden', boxSizing: 'border-box' }}>
+              <Image src="/images/dolce-vida-portal.jpg" alt="Star opening the Dolce Vida portal" fill style={{ objectFit: 'cover', objectPosition: 'center' }} />
             </div>
           </div>
 
@@ -394,46 +390,45 @@ export default function HomePage() {
 
       {/* -- TESTIMONIALS -- */}
       <section id="testimonials" style={{ padding: `${SECTION_PY} ${PX}`, background: BLACK }}>
-    <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-      <p className="section-label">Client Voices</p>
-      <h2 className="gold-text section-title">What They Say</h2>
-      {/* auto-grid: 1 col on mobile, multi-col on tablet+ */}
-      <div className="auto-grid" style={{ marginTop: 40 }}>
-        {TESTIMONIALS.map(({ quote, author, location }) => (
-          <div key={author} style={{ background: BLACK2, padding: 'clamp(20px,4vw,32px) clamp(16px,4vw,24px)', border: '1px solid rgba(255,255,255,0.04)' }}>
-            <p style={{ color: GOLD, letterSpacing: '0.1em', marginBottom: 14, fontSize: '0.85rem' }}>★★★★★</p>
-            <p style={{ fontFamily: BODY_FONT, fontStyle: 'italic', fontSize: 'clamp(1rem,3vw,1.1rem)', lineHeight: 1.75, color: CREAM_MUTED, marginBottom: 18 }}>&ldquo;{quote}&rdquo;</p>
-            <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.6rem,2vw,0.7rem)', letterSpacing: '0.15em', textTransform: 'uppercase', color: CREAM }}>{author}</p>
-            <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.55rem,2vw,0.62rem)', letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, opacity: 0.7, marginTop: 4 }}>{location}</p>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <p className="section-label">Client Voices</p>
+          <h2 className="gold-text section-title">What They Say</h2>
+          <div className="auto-grid" style={{ marginTop: 40 }}>
+            {TESTIMONIALS.map(({ quote, author, location }) => (
+              <div key={author} style={{ background: BLACK2, padding: 'clamp(24px,5vw,36px) clamp(20px,4vw,28px)', border: '1px solid rgba(255,255,255,0.04)' }}>
+                <p style={{ color: GOLD, letterSpacing: '0.1em', marginBottom: 14, fontSize: '0.9rem' }}>★★★★★</p>
+                <p style={{ fontFamily: BODY_FONT, fontStyle: 'italic', fontSize: 'clamp(1rem,3vw,1.1rem)', lineHeight: 1.75, color: CREAM_MUTED, marginBottom: 18 }}>&ldquo;{quote}&rdquo;</p>
+                <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.6rem,2vw,0.7rem)', letterSpacing: '0.15em', textTransform: 'uppercase', color: CREAM }}>{author}</p>
+                <p style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.55rem,2vw,0.62rem)', letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, opacity: 0.7, marginTop: 4 }}>{location}</p>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
         </div>
       </section>
 
       {/* -- FAQ -- */}
       <section id="faq" style={{ padding: `${SECTION_PY} ${PX}`, background: BLACK2 }}>
-    <div style={{ maxWidth: 760, margin: '0 auto' }}>
-      <p className="section-label">Questions</p>
-      <h2 className="gold-text section-title">Common Questions</h2>
-      <div style={{ marginTop: 40 }}>
-        {FAQS.map(({ q, a }, i) => (
-          <div key={i} style={{ borderBottom: '1px solid rgba(201,168,76,0.1)' }}>
-            <button
-              onClick={() => setOpenFaq(openFaq === i ? null : i)}
-              style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '20px 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', gap: 16, touchAction: 'manipulation' }}
-            >
-              <span style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.65rem,2.8vw,0.82rem)', letterSpacing: '0.05em', textTransform: 'uppercase', color: CREAM, lineHeight: 1.6, flex: 1 }}>{q}</span>
-              <span style={{ color: GOLD, fontSize: '1.3rem', flexShrink: 0, lineHeight: 1, marginTop: 2 }}>{openFaq === i ? '−' : '+'}</span>
-            </button>
-            {openFaq === i && (
-              <div style={{ paddingBottom: 20 }}>
-                <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.05rem)', lineHeight: 1.8, color: CREAM_MUTED }}>{a}</p>
+        <div style={{ maxWidth: 760, margin: '0 auto' }}>
+          <p className="section-label">Questions</p>
+          <h2 className="gold-text section-title">Common Questions</h2>
+          <div style={{ marginTop: 40 }}>
+            {FAQS.map(({ q, a }, i) => (
+              <div key={i} style={{ borderBottom: '1px solid rgba(201,168,76,0.1)' }}>
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '22px 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', gap: 16, touchAction: 'manipulation' }}
+                >
+                  <span style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.68rem,2.8vw,0.82rem)', letterSpacing: '0.05em', textTransform: 'uppercase', color: CREAM, lineHeight: 1.6, flex: 1 }}>{q}</span>
+                  <span style={{ color: GOLD, fontSize: '1.4rem', flexShrink: 0, lineHeight: 1, marginTop: 2 }}>{openFaq === i ? '−' : '+'}</span>
+                </button>
+                {openFaq === i && (
+                  <div style={{ paddingBottom: 24 }}>
+                    <p style={{ fontFamily: BODY_FONT, fontSize: 'clamp(1rem,3vw,1.05rem)', lineHeight: 1.85, color: CREAM_MUTED }}>{a}</p>
+                  </div>
+                )}
               </div>
-            )}
+            ))}
           </div>
-        ))}
-      </div>
         </div>
       </section>
 
@@ -444,8 +439,9 @@ export default function HomePage() {
         position: 'relative',
         backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Apr%2019%2C%202026%2C%2010_03_46%20PM-BPzzECOH2TDIMHFRWb6EQWxfYW1et6.png')`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center top',
+        backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'scroll',
       }}>
         {/* Dark overlay keeps text legible without washing out the image */}
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(8,8,8,0.58)', zIndex: 0 }} />
@@ -489,10 +485,10 @@ export default function HomePage() {
 
       {/* -- CONTACT -- */}
       <section id="contact" style={{ padding: `${SECTION_PY} ${PX}`, background: BLACK2 }}>
-    <div style={{ maxWidth: 960, margin: '0 auto' }}>
-      <p className="section-label">Find Us</p>
-      <h2 className="gold-text section-title">Come to Us</h2>
-      <div className="two-col-grid" style={{ marginTop: 40, alignItems: 'start' }}>
+        <div style={{ maxWidth: 960, margin: '0 auto' }}>
+          <p className="section-label">Find Us</p>
+          <h2 className="gold-text section-title">Come to Us</h2>
+          <div className="two-col-grid" style={{ marginTop: 40, alignItems: 'start' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
           {[
             { label: 'Address', value: '351 S. Wells Ave, Suite 200\nReno, Nevada 89502', href: undefined },
@@ -541,7 +537,7 @@ export default function HomePage() {
             Book a Session
           </Link>
         </div>
-        </div>
+      </div>
       </div>
       </section>
 
@@ -550,7 +546,7 @@ export default function HomePage() {
         <p className="gold-text" style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: 'clamp(1rem,5vw,1.4rem)', fontWeight: 700, letterSpacing: '0.1em', marginBottom: 10 }}>Dolce Vida</p>
         <p style={{ fontFamily: BODY_FONT, fontStyle: 'italic', fontSize: 'clamp(0.95rem,3vw,1rem)', color: CREAM_MUTED, marginBottom: 20 }}>Change your energy. Transform your life.</p>
         <nav className="footer-nav" style={{ marginBottom: 20 }}>
-          {[['About', '#about'], ['Services', '/services'], ['Book', '/book'], ['Contact', '#contact']].map(([label, href]) => (
+          {[['About', '#about'], ['Services', '/services'], ['Shop', '/shop'], ['Book', '/book'], ['Contact', '#contact']].map(([label, href]) => (
             <a key={label} href={href} style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.58rem,2.5vw,0.68rem)', letterSpacing: '0.16em', textTransform: 'uppercase', color: CREAM_MUTED, textDecoration: 'none', opacity: 0.6 }}>{label}</a>
           ))}
         </nav>

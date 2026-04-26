@@ -9,6 +9,10 @@ export async function POST(req: NextRequest) {
   try {
     const { service, price, firstName, lastName, email, phone, date, time, notes } = await req.json()
 
+    // Derive the base URL: env var takes priority, then infer from the incoming request
+    const origin = req.headers.get('origin') || req.headers.get('referer')?.split('/').slice(0, 3).join('/') || ''
+    const baseUrl = (process.env.NEXT_PUBLIC_BASE_URL || origin).replace(/\/$/, '')
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: [
@@ -26,8 +30,8 @@ export async function POST(req: NextRequest) {
       ],
       mode: 'payment',
       customer_email: email,
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/book`,
+      success_url: `${baseUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${baseUrl}/book`,
       metadata: {
         service,
         firstName,
