@@ -168,18 +168,18 @@ export default function HomePage() {
       }}>
         <a href="#hero" className="gold-text" style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: 'clamp(0.85rem,4vw,1.3rem)', fontWeight: 700, letterSpacing: '0.1em', textDecoration: 'none', flexShrink: 0 }}>Dolce Vida</a>
 
-        <ul className="nav-desktop">
+        <ul className="hidden md:flex" style={{ gap: 28, listStyle: 'none', flex: 1, justifyContent: 'center', alignItems: 'center', margin: 0, padding: 0 }}>
           {[['About', '#about'], ['Services', '/services'], ['Shop', '/shop'], ['The Book', '#book-section'], ['Reviews', '#testimonials'], ['Contact', '#contact']].map(([label, href]) => (
             <li key={label}>
               <a href={href} className={`nav-link${label === 'Shop' ? ' nav-link-gold' : ''}`}>{label}</a>
             </li>
           ))}
         </ul>
-        <Link href="/book" className="book-now-desktop">Book Now</Link>
+        <Link href="/book" className="hidden md:inline-block" style={{ padding: '11px 22px', fontSize: '0.62rem', fontFamily: HEAD_FONT, letterSpacing: '0.2em', textTransform: 'uppercase', background: 'linear-gradient(135deg,#8B6914,#C9A84C)', color: BLACK, textDecoration: 'none', fontWeight: 700, flexShrink: 0, whiteSpace: 'nowrap' }}>Book Now</Link>
 
         <button
           onClick={() => setMobileOpen(true)}
-          className="mobile-menu-btn"
+          className="flex md:hidden"
           style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 8, flexDirection: 'column', gap: 5, touchAction: 'manipulation' }}
           aria-label="Open menu"
         >

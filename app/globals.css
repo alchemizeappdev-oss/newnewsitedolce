@@ -173,37 +173,8 @@ img, video {
   gap: clamp(16px, 4vw, 28px);
 }
 
-/* ===================== NAV ===================== */
+/* ===================== NAV LINKS ===================== */
 
-/* Mobile: completely removed from flow */
-.nav-desktop {
-  display: none;
-  list-style: none;
-  gap: 28px;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-
-.book-now-desktop {
-  display: none;
-  padding: 11px 22px;
-  font-size: 0.62rem;
-  font-family: 'Cinzel', serif;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, #8B6914, #C9A84C);
-  color: #080808;
-  text-decoration: none;
-  font-weight: 700;
-  flex-shrink: 0;
-  white-space: nowrap;
-}
-.book-now-desktop:hover { opacity: 0.88; }
-
-/* Nav links always light — navbar is always over dark bg */
 .nav-link {
   font-family: 'Cinzel', serif;
   font-size: 0.65rem;
@@ -215,8 +186,6 @@ img, video {
 }
 .nav-link:hover { color: var(--gold); }
 .nav-link-gold { color: var(--gold); }
-
-.mobile-menu-btn { display: flex; }
 
 /* ===================== BREAKPOINTS ===================== */
 @media (min-width: 640px) {
@@ -232,11 +201,6 @@ img, video {
     gap: clamp(32px, 5vw, 60px);
     align-items: center;
   }
-
-  /* Restore desktop nav — these override display:none above */
-  .nav-desktop      { display: flex; }
-  .book-now-desktop { display: inline-block; }
-  .mobile-menu-btn  { display: none; }
 }
 
 /* ===================== SAFE AREA FOOTER ===================== */

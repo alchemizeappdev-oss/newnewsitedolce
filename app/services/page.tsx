@@ -44,15 +44,15 @@ export default function ServicesPage() {
     <>
       <nav style={{ position: 'sticky', top: 0, zIndex: 100, background: 'rgba(8,8,8,0.96)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(201,168,76,0.12)', padding: '16px clamp(16px,4vw,40px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
         <Link href="/" className="gold-text" style={{ fontFamily: "'Cinzel Decorative', serif", fontSize: 'clamp(0.85rem,3vw,1.1rem)', fontWeight: 700, letterSpacing: '0.12em', textDecoration: 'none', flexShrink: 0 }}>Dolce Vida</Link>
-        <ul className="nav-desktop">
+        <ul className="hidden md:flex" style={{ gap: 28, listStyle: 'none', flex: 1, justifyContent: 'center', alignItems: 'center', margin: 0, padding: 0 }}>
           {[['About', '/#about'], ['Services', '/services'], ['Shop', '/shop'], ['The Book', '/#book-section'], ['Reviews', '/#testimonials'], ['Contact', '/#contact']].map(([label, href]) => (
             <li key={label}>
               <Link href={href} className={`nav-link${label === 'Services' ? ' nav-link-gold' : ''}`}>{label}</Link>
             </li>
           ))}
         </ul>
-        <Link href="/book" className="book-now-desktop">Book Now</Link>
-        <Link href="/" style={{ fontFamily: "'Cinzel',serif", fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#D4C4A0', textDecoration: 'none', whiteSpace: 'nowrap' }} className="mobile-menu-btn">Menu</Link>
+        <Link href="/book" className="hidden md:inline-block" style={{ padding: '11px 22px', fontSize: '0.62rem', fontFamily: "'Cinzel',serif", letterSpacing: '0.2em', textTransform: 'uppercase', background: 'linear-gradient(135deg,#8B6914,#C9A84C)', color: '#080808', textDecoration: 'none', fontWeight: 700, whiteSpace: 'nowrap', flexShrink: 0 }}>Book Now</Link>
+        <Link href="/" className="flex md:hidden" style={{ fontFamily: "'Cinzel',serif", fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#D4C4A0', textDecoration: 'none', whiteSpace: 'nowrap' }}>Menu</Link>
       </nav>
 
       <div style={{ padding: '100px 20px 60px', textAlign: 'center', background: '#080808' }}>
