@@ -154,7 +154,7 @@ export default function HomePage() {
       )}
 
       {/* -- NAVBAR -- */}
-      <nav style={{
+      <nav className={scrolled ? 'scrolled' : ''} style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         padding: `${scrolled ? '10px' : '14px'} ${PX}`,

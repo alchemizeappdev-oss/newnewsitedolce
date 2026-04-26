@@ -175,10 +175,13 @@ img, video {
 
 /* ===================== NAV ===================== */
 
-/* Base: always hidden on mobile — display:none removes it from flow entirely */
+/* Mobile: pull out of flow entirely */
 .nav-desktop {
-  display: none;
+  visibility: hidden;
+  position: absolute;
+  pointer-events: none;
   list-style: none;
+  display: flex;
   gap: 28px;
   flex: 1;
   justify-content: center;
@@ -187,20 +190,10 @@ img, video {
   padding: 0;
 }
 
-.nav-link {
-  font-family: 'Cinzel', serif;
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--cream-muted);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-.nav-link:hover { color: var(--gold); }
-.nav-link-gold { color: var(--gold); }
-
 .book-now-desktop {
-  display: none;
+  visibility: hidden;
+  position: absolute;
+  pointer-events: none;
   padding: 11px 22px;
   font-size: 0.62rem;
   font-family: 'Cinzel', serif;
@@ -214,6 +207,19 @@ img, video {
   white-space: nowrap;
 }
 .book-now-desktop:hover { opacity: 0.88; }
+
+/* Nav links: cream by default (nav is always on dark bg or transparent over hero) */
+.nav-link {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.nav-link:hover { color: var(--gold); }
+.nav-link-gold { color: var(--gold); }
 
 .mobile-menu-btn { display: flex; }
 
@@ -232,10 +238,18 @@ img, video {
     align-items: center;
   }
 
-  /* Show desktop nav — display:flex overrides the display:none above */
-  .nav-desktop       { display: flex; }
-  .book-now-desktop  { display: inline-block; }
-  .mobile-menu-btn   { display: none; }
+  .nav-desktop {
+    visibility: visible;
+    position: static;
+    pointer-events: auto;
+  }
+  .book-now-desktop {
+    visibility: visible;
+    position: static;
+    pointer-events: auto;
+    display: inline-block;
+  }
+  .mobile-menu-btn { display: none; }
 }
 
 /* ===================== SAFE AREA FOOTER ===================== */
