@@ -118,12 +118,12 @@ export default function HomePage() {
           >
             ✕
           </button>
-          {[['About', '#about'], ['Services', '/services'], ['The Book', '#book-section'], ['Reviews', '#testimonials'], ['Contact', '#contact']].map(([label, href]) => (
+          {[['About', '#about'], ['Services', '/services'], ['Shop', '/shop'], ['The Book', '#book-section'], ['Reviews', '#testimonials'], ['Contact', '#contact']].map(([label, href]) => (
             <a
               key={label}
               href={href}
               onClick={() => setMobileOpen(false)}
-              style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(1rem, 5vw, 1.3rem)', letterSpacing: '0.2em', textTransform: 'uppercase', color: CREAM, textDecoration: 'none', touchAction: 'manipulation' }}
+              style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(1rem, 5vw, 1.3rem)', letterSpacing: '0.2em', textTransform: 'uppercase', color: label === 'Shop' ? GOLD : CREAM, textDecoration: 'none', touchAction: 'manipulation' }}
             >
               {label}
             </a>
@@ -169,9 +169,9 @@ export default function HomePage() {
         <a href="#hero" className="gold-text" style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: 'clamp(0.85rem,4vw,1.3rem)', fontWeight: 700, letterSpacing: '0.1em', textDecoration: 'none', flexShrink: 0 }}>Dolce Vida</a>
 
         <ul className="nav-desktop" style={{ display: 'none', gap: 28, listStyle: 'none', flex: 1, justifyContent: 'center' }}>
-          {[['About', '#about'], ['Services', '/services'], ['The Book', '#book-section'], ['Reviews', '#testimonials'], ['Contact', '#contact']].map(([label, href]) => (
+          {[['About', '#about'], ['Services', '/services'], ['Shop', '/shop'], ['The Book', '#book-section'], ['Reviews', '#testimonials'], ['Contact', '#contact']].map(([label, href]) => (
             <li key={label}>
-              <a href={href} style={{ fontFamily: HEAD_FONT, fontSize: '0.65rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: CREAM_MUTED, textDecoration: 'none' }}>{label}</a>
+              <a href={href} style={{ fontFamily: HEAD_FONT, fontSize: '0.65rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: label === 'Shop' ? GOLD : CREAM_MUTED, textDecoration: 'none' }}>{label}</a>
             </li>
           ))}
         </ul>
@@ -550,7 +550,7 @@ export default function HomePage() {
         <p className="gold-text" style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: 'clamp(1rem,5vw,1.4rem)', fontWeight: 700, letterSpacing: '0.1em', marginBottom: 10 }}>Dolce Vida</p>
         <p style={{ fontFamily: BODY_FONT, fontStyle: 'italic', fontSize: 'clamp(0.95rem,3vw,1rem)', color: CREAM_MUTED, marginBottom: 20 }}>Change your energy. Transform your life.</p>
         <nav className="footer-nav" style={{ marginBottom: 20 }}>
-          {[['About', '#about'], ['Services', '/services'], ['Book', '/book'], ['Contact', '#contact']].map(([label, href]) => (
+          {[['About', '#about'], ['Services', '/services'], ['Shop', '/shop'], ['Book', '/book'], ['Contact', '#contact']].map(([label, href]) => (
             <a key={label} href={href} style={{ fontFamily: HEAD_FONT, fontSize: 'clamp(0.58rem,2.5vw,0.68rem)', letterSpacing: '0.16em', textTransform: 'uppercase', color: CREAM_MUTED, textDecoration: 'none', opacity: 0.6 }}>{label}</a>
           ))}
         </nav>
