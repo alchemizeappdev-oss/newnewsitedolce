@@ -145,15 +145,15 @@ img, video {
 .two-col-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
-  align-items: center;
+  gap: clamp(28px, 6vw, 48px);
+  align-items: start;
 }
 
 /* Belief pillars / testimonials: auto-fill responsive grid */
 .auto-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 12px;
+  gap: 1px;
 }
 
 /* Stats row */
@@ -162,6 +162,7 @@ img, video {
   flex-wrap: wrap;
   justify-content: center;
   gap: clamp(28px, 6vw, 60px);
+  padding: clamp(16px, 4vw, 32px) 0;
 }
 
 /* Footer nav */
@@ -169,7 +170,7 @@ img, video {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: clamp(14px, 4vw, 28px);
+  gap: clamp(16px, 4vw, 28px);
 }
 
 /* ===================== NAV VISIBILITY ===================== */
@@ -180,8 +181,8 @@ img, video {
 /* ===================== TABLET & DESKTOP ===================== */
 @media (min-width: 640px) {
   .auto-grid {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 2px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
   }
 }
 
@@ -189,14 +190,12 @@ img, video {
   .two-col-grid {
     grid-template-columns: 1fr 1fr;
     gap: clamp(32px, 5vw, 60px);
+    align-items: center;
   }
 
   .nav-desktop { display: flex !important; }
   .book-now-desktop { display: inline-block !important; }
   .mobile-menu-btn { display: none !important; }
-
-  /* Portrait images: restore 3/4 on desktop */
-  .img-portrait-mobile { aspect-ratio: 3/4 !important; }
 }
 
 /* ===================== SAFE AREA FOOTER ===================== */
