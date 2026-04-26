@@ -174,8 +174,25 @@ img, video {
 }
 
 /* ===================== NAV VISIBILITY ===================== */
-.nav-desktop { display: none; }
-.book-now-desktop { display: none; }
+/* Hide on mobile using max-width so the media query below always wins */
+@media (max-width: 767px) {
+  .nav-desktop {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    overflow: hidden;
+  }
+  .book-now-desktop {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    overflow: hidden;
+  }
+}
 .mobile-menu-btn { display: flex; }
 
 /* ===================== TABLET & DESKTOP ===================== */
@@ -193,9 +210,26 @@ img, video {
     align-items: center;
   }
 
-  .nav-desktop { display: flex !important; align-items: center; }
-  .book-now-desktop { display: inline-block !important; }
-  .mobile-menu-btn { display: none !important; }
+  .nav-desktop {
+    display: flex;
+    align-items: center;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    position: static;
+    width: auto;
+    overflow: visible;
+  }
+  .book-now-desktop {
+    display: inline-block;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    position: static;
+    width: auto;
+    overflow: visible;
+  }
+  .mobile-menu-btn { display: none; }
 }
 
 /* ===================== SAFE AREA FOOTER ===================== */

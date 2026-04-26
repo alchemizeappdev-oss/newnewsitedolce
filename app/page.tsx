@@ -168,14 +168,14 @@ export default function HomePage() {
       }}>
         <a href="#hero" className="gold-text" style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: 'clamp(0.85rem,4vw,1.3rem)', fontWeight: 700, letterSpacing: '0.1em', textDecoration: 'none', flexShrink: 0 }}>Dolce Vida</a>
 
-        <ul className="nav-desktop" style={{ gap: 28, listStyle: 'none', flex: 1, justifyContent: 'center', alignItems: 'center', display: 'none' }}>
+        <ul className="nav-desktop" style={{ gap: 28, listStyle: 'none', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           {[['About', '#about'], ['Services', '/services'], ['Shop', '/shop'], ['The Book', '#book-section'], ['Reviews', '#testimonials'], ['Contact', '#contact']].map(([label, href]) => (
             <li key={label}>
               <a href={href} style={{ fontFamily: HEAD_FONT, fontSize: '0.65rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: label === 'Shop' ? GOLD : CREAM_MUTED, textDecoration: 'none' }}>{label}</a>
             </li>
           ))}
         </ul>
-        <Link href="/book" className="book-now-desktop" style={{ display: 'none', padding: '11px 22px', fontSize: '0.62rem', fontFamily: HEAD_FONT, letterSpacing: '0.2em', textTransform: 'uppercase', background: 'linear-gradient(135deg,#8B6914,#C9A84C)', color: BLACK, textDecoration: 'none', fontWeight: 700, flexShrink: 0 }}>Book Now</Link>
+        <Link href="/book" className="book-now-desktop" style={{ padding: '11px 22px', fontSize: '0.62rem', fontFamily: HEAD_FONT, letterSpacing: '0.2em', textTransform: 'uppercase', background: 'linear-gradient(135deg,#8B6914,#C9A84C)', color: BLACK, textDecoration: 'none', fontWeight: 700, flexShrink: 0 }}>Book Now</Link>
 
         <button
           onClick={() => setMobileOpen(true)}
