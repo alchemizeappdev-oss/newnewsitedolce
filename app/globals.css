@@ -193,7 +193,7 @@ img, video {
     align-items: center;
   }
 
-  .nav-desktop { display: flex !important; }
+  .nav-desktop { display: flex !important; align-items: center; }
   .book-now-desktop { display: inline-block !important; }
   .mobile-menu-btn { display: none !important; }
 }
