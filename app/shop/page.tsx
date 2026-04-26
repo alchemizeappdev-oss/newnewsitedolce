@@ -248,22 +248,21 @@ export default function ShopPage() {
       {/* ── NAVBAR ── */}
       <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: `${scrolled ? '10px' : '14px'} ${PX}`, background: scrolled ? 'rgba(8,8,8,0.95)' : 'rgba(8,8,8,0.85)', backdropFilter: 'blur(24px)', borderBottom: '1px solid rgba(201,168,76,0.18)', transition: 'all 0.4s ease', gap: 12 }}>
         <Link href="/" style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: 'clamp(0.85rem,4vw,1.3rem)', fontWeight: 700, letterSpacing: '0.1em', textDecoration: 'none', flexShrink: 0, background: 'linear-gradient(105deg,#8B6914,#C9A84C,#F5D778,#C9A84C,#8B6914)', backgroundSize: '200% auto', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Dolce Vida</Link>
-        <ul className="nav-desktop" style={{ display: 'none', gap: 28, listStyle: 'none', flex: 1, justifyContent: 'center' }}>
+        <ul className="nav-desktop">
           {[['About', '/#about'], ['Services', '/services'], ['Shop', '/shop'], ['The Book', '/#book-section'], ['Reviews', '/#testimonials'], ['Contact', '/#contact']].map(([label, href]) => (
             <li key={label}>
-              <a href={href} style={{ fontFamily: HEAD_FONT, fontSize: '0.65rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: label === 'Shop' ? GOLD : CREAM_MUTED, textDecoration: 'none' }}>{label}</a>
+              <a href={href} className={`nav-link${label === 'Shop' ? ' nav-link-gold' : ''}`}>{label}</a>
             </li>
           ))}
         </ul>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexShrink: 0 }}>
-          {/* Cart button */}
           <button onClick={() => setCartOpen(true)} aria-label={`Cart (${cartCount})`} style={{ background: 'none', border: '1px solid rgba(201,168,76,0.3)', color: CREAM, fontFamily: HEAD_FONT, fontSize: '0.62rem', letterSpacing: '0.15em', textTransform: 'uppercase', padding: '9px 14px', cursor: 'pointer', position: 'relative', display: 'flex', alignItems: 'center', gap: 6 }}>
             Cart
             {cartCount > 0 && (
               <span style={{ background: GOLD, color: BLACK, borderRadius: '50%', width: 18, height: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.6rem', fontWeight: 700, fontFamily: HEAD_FONT }}>{cartCount}</span>
             )}
           </button>
-          <Link href="/book" className="book-now-desktop" style={{ padding: '11px 22px', fontSize: '0.62rem', fontFamily: HEAD_FONT, letterSpacing: '0.2em', textTransform: 'uppercase', background: 'linear-gradient(135deg,#8B6914,#C9A84C)', color: BLACK, textDecoration: 'none', fontWeight: 700 }}>Book Now</Link>
+          <Link href="/book" className="book-now-desktop">Book Now</Link>
           <button onClick={() => setMobileOpen(true)} className="mobile-menu-btn" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 8, display: 'flex', flexDirection: 'column', gap: 5 }} aria-label="Open menu">
             {[0, 1, 2].map(i => <span key={i} style={{ display: 'block', width: 26, height: 2, background: GOLD, borderRadius: 1 }} />)}
           </button>
