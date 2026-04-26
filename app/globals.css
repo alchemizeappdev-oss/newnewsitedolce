@@ -173,29 +173,51 @@ img, video {
   gap: clamp(16px, 4vw, 28px);
 }
 
-/* ===================== NAV VISIBILITY ===================== */
-/* Hide on mobile using max-width so the media query below always wins */
-@media (max-width: 767px) {
-  .nav-desktop {
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-    width: 0;
-    overflow: hidden;
-  }
-  .book-now-desktop {
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-    width: 0;
-    overflow: hidden;
-  }
+/* ===================== NAV ===================== */
+
+/* Base: always hidden on mobile — display:none removes it from flow entirely */
+.nav-desktop {
+  display: none;
+  list-style: none;
+  gap: 28px;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
+
+.nav-link {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.nav-link:hover { color: var(--gold); }
+.nav-link-gold { color: var(--gold); }
+
+.book-now-desktop {
+  display: none;
+  padding: 11px 22px;
+  font-size: 0.62rem;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #8B6914, #C9A84C);
+  color: #080808;
+  text-decoration: none;
+  font-weight: 700;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.book-now-desktop:hover { opacity: 0.88; }
+
 .mobile-menu-btn { display: flex; }
 
-/* ===================== TABLET & DESKTOP ===================== */
+/* ===================== BREAKPOINTS ===================== */
 @media (min-width: 640px) {
   .auto-grid {
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -210,26 +232,10 @@ img, video {
     align-items: center;
   }
 
-  .nav-desktop {
-    display: flex;
-    align-items: center;
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-    position: static;
-    width: auto;
-    overflow: visible;
-  }
-  .book-now-desktop {
-    display: inline-block;
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-    position: static;
-    width: auto;
-    overflow: visible;
-  }
-  .mobile-menu-btn { display: none; }
+  /* Show desktop nav — display:flex overrides the display:none above */
+  .nav-desktop       { display: flex; }
+  .book-now-desktop  { display: inline-block; }
+  .mobile-menu-btn   { display: none; }
 }
 
 /* ===================== SAFE AREA FOOTER ===================== */
