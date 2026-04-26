@@ -168,7 +168,7 @@ export default function HomePage() {
       }}>
         <a href="#hero" className="gold-text" style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: 'clamp(0.85rem,4vw,1.3rem)', fontWeight: 700, letterSpacing: '0.1em', textDecoration: 'none', flexShrink: 0 }}>Dolce Vida</a>
 
-        <ul className="nav-desktop" style={{ display: 'none', gap: 28, listStyle: 'none', flex: 1, justifyContent: 'center' }}>
+        <ul className="nav-desktop" style={{ gap: 28, listStyle: 'none', flex: 1, justifyContent: 'center' }}>
           {[['About', '#about'], ['Services', '/services'], ['Shop', '/shop'], ['The Book', '#book-section'], ['Reviews', '#testimonials'], ['Contact', '#contact']].map(([label, href]) => (
             <li key={label}>
               <a href={href} style={{ fontFamily: HEAD_FONT, fontSize: '0.65rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: label === 'Shop' ? GOLD : CREAM_MUTED, textDecoration: 'none' }}>{label}</a>
