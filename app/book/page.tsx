@@ -104,7 +104,9 @@ function BookingUI() {
       })
       const data = await res.json()
       if (data.url) {
-        window.location.href = data.url
+        // Use window.top to break out of any iframe (e.g. v0 preview, embedded frames)
+        const target = window.top || window
+        target.location.href = data.url
       } else {
         throw new Error(data.error || 'Checkout failed')
       }
