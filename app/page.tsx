@@ -45,10 +45,6 @@ export default function HomePage() {
   const [showInstall, setShowInstall] = useState(false)
 
   useEffect(() => {
-    console.log('[v0] HomePage mounted - client hydration complete')
-  }, [])
-
-  useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)

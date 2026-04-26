@@ -175,13 +175,12 @@ img, video {
 
 /* ===================== NAV ===================== */
 
-/* Mobile: pull out of flow entirely */
+/* ===================== NAV ===================== */
+
+/* Mobile: completely removed from flow */
 .nav-desktop {
-  visibility: hidden;
-  position: absolute;
-  pointer-events: none;
+  display: none;
   list-style: none;
-  display: flex;
   gap: 28px;
   flex: 1;
   justify-content: center;
@@ -191,9 +190,7 @@ img, video {
 }
 
 .book-now-desktop {
-  visibility: hidden;
-  position: absolute;
-  pointer-events: none;
+  display: none;
   padding: 11px 22px;
   font-size: 0.62rem;
   font-family: 'Cinzel', serif;
@@ -208,7 +205,7 @@ img, video {
 }
 .book-now-desktop:hover { opacity: 0.88; }
 
-/* Nav links: cream by default (nav is always on dark bg or transparent over hero) */
+/* Nav links always light — navbar is always over dark bg */
 .nav-link {
   font-family: 'Cinzel', serif;
   font-size: 0.65rem;
@@ -238,18 +235,10 @@ img, video {
     align-items: center;
   }
 
-  .nav-desktop {
-    visibility: visible;
-    position: static;
-    pointer-events: auto;
-  }
-  .book-now-desktop {
-    visibility: visible;
-    position: static;
-    pointer-events: auto;
-    display: inline-block;
-  }
-  .mobile-menu-btn { display: none; }
+  /* Restore desktop nav — these override display:none above */
+  .nav-desktop      { display: flex; }
+  .book-now-desktop { display: inline-block; }
+  .mobile-menu-btn  { display: none; }
 }
 
 /* ===================== SAFE AREA FOOTER ===================== */
