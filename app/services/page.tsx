@@ -42,16 +42,17 @@ export default function ServicesPage() {
 
   return (
     <>
-      <nav style={{ position: 'sticky', top: 0, zIndex: 100, background: 'rgba(8,8,8,0.96)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(201,168,76,0.12)', padding: '16px 40px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Link href="/" className="gold-text" style={{ fontFamily: "'Cinzel Decorative', serif", fontSize: '1.1rem', fontWeight: 700, letterSpacing: '0.12em', textDecoration: 'none' }}>Dolce Vida</Link>
-        <ul style={{ display: 'flex', gap: 36, listStyle: 'none', margin: 0, padding: 0 }}>
-          {[['About', '/#about'], ['Services', '/services'], ['The Book', '/#book-section'], ['Reviews', '/#testimonials'], ['Contact', '/#contact']].map(([label, href]) => (
+      <nav style={{ position: 'sticky', top: 0, zIndex: 100, background: 'rgba(8,8,8,0.96)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(201,168,76,0.12)', padding: '16px clamp(16px,4vw,40px)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
+        <Link href="/" className="gold-text" style={{ fontFamily: "'Cinzel Decorative', serif", fontSize: 'clamp(0.85rem,3vw,1.1rem)', fontWeight: 700, letterSpacing: '0.12em', textDecoration: 'none', flexShrink: 0 }}>Dolce Vida</Link>
+        <ul className="nav-desktop">
+          {[['About', '/#about'], ['Services', '/services'], ['Shop', '/shop'], ['The Book', '/#book-section'], ['Reviews', '/#testimonials'], ['Contact', '/#contact']].map(([label, href]) => (
             <li key={label}>
-              <Link href={href} style={{ fontFamily: "'Cinzel', serif", fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: label === 'Services' ? '#C9A84C' : '#D4C4A0', textDecoration: 'none' }}>{label}</Link>
+              <Link href={href} className={`nav-link${label === 'Services' ? ' nav-link-gold' : ''}`}>{label}</Link>
             </li>
           ))}
         </ul>
-        <Link href="/book" className="btn-primary">Book Now</Link>
+        <Link href="/book" className="book-now-desktop">Book Now</Link>
+        <Link href="/" style={{ fontFamily: "'Cinzel',serif", fontSize: '0.6rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#D4C4A0', textDecoration: 'none', whiteSpace: 'nowrap' }} className="mobile-menu-btn">Menu</Link>
       </nav>
 
       <div style={{ padding: '100px 20px 60px', textAlign: 'center', background: '#080808' }}>
