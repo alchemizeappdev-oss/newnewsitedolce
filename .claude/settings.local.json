@@ -2,7 +2,27 @@
   "permissions": {
     "allow": [
       "Bash(git remote *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Skill(schedule)",
+      "Skill(schedule:*)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(*)",
+      "PowerShell(*)",
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "CronCreate",
+      "CronDelete",
+      "TodoWrite",
+      "WebFetch",
+      "WebSearch",
+      "mcp__scheduled-tasks__create_scheduled_task",
+      "mcp__scheduled-tasks__list_scheduled_tasks",
+      "mcp__scheduled-tasks__update_scheduled_task",
+      "mcp__Claude_Preview__preview_start"
     ]
   }
 }
