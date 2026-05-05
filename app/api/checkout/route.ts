@@ -14,28 +14,24 @@ export async function POST(req: NextRequest) {
     const origin = req.headers.get('origin') || req.headers.get('referer')?.split('/').slice(0, 3).join('/') || ''
     const baseUrl = (process.env.NEXT_PUBLIC_BASE_URL || origin).replace(/\/$/, '')
 
-    // Create a checkout link using Square's Payment Link API
-    const paymentLink = await squareClient.checkoutApi.createCheckout(process.env.SQUARE_LOCATION_ID!, {
+    // Create a payment link using Square's Payment Link API
+    const paymentLink = await squareClient.checkoutApi.createPaymentLink({
       idempotencyKey: `${email}-${Date.now()}`,
-      checkout: {
-        lineItems: [
-          {
-            quantity: '1',
-            name: service,
-            description: `Session with Star Monreal — ${date} at ${time}`,
-            basePriceMoney: {
-              amount: BigInt(Math.round(price * 100)),
-              currency: 'USD',
-            },
-          },
-        ],
-        additionalRecipients: [],
-        redirectUrl: `${baseUrl}/success`,
-        orderReference: `session-${Date.now()}`,
+      quickPay: {
+        name: `${service} - $${price.toFixed(2)}`,
+        currencyCode: 'USD',
       },
+      redirectUrl: `${baseUrl}/success`,
+      note: `Session: ${date} at ${time} - Contact: ${firstName} ${lastName}`,
     })
 
-    return NextResponse.json({ url: paymentLink.result?.checkout?.checkoutPageUrl })
+    const checkoutUrl = paymentLink.result?.paymentLink?.url
+
+    if (!checkoutUrl) {
+      throw new Error('Failed to generate payment link')
+    }
+
+    return NextResponse.json({ url: checkoutUrl })
   } catch (err: unknown) {
     console.error('Square error:', err)
     const message = err instanceof Error ? err.message : 'Internal server error'
