@@ -160,7 +160,7 @@ function BookingUI() {
         {loading ? 'Redirecting...' : 'Proceed to Checkout'}
       </button>
       <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: '0.8rem', fontStyle: 'italic', color: '#D4C4A0', opacity: 0.4, textAlign: 'center', marginTop: 14, lineHeight: 1.6 }}>
-        Secure payment via Stripe. You&apos;ll be redirected to complete your booking.
+        Secure payment via Square. You&apos;ll be redirected to complete your booking.
       </p>
     </div>
   )
