@@ -19,10 +19,12 @@ export async function POST(req: NextRequest) {
       idempotencyKey: `${email}-${Date.now()}`,
       quickPay: {
         name: `${service} - $${price.toFixed(2)}`,
-        currencyCode: 'USD',
+        priceMoney: {
+          amount: BigInt(Math.round(price * 100)),
+          currency: 'USD',
+        },
+        locationId: process.env.SQUARE_LOCATION_ID!,
       },
-      redirectUrl: `${baseUrl}/success`,
-      note: `Session: ${date} at ${time} - Contact: ${firstName} ${lastName}`,
     })
 
     const checkoutUrl = paymentLink.result?.paymentLink?.url
